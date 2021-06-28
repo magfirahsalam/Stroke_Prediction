@@ -1,0 +1,12 @@
+.map-responsive{
+    padding-bottom:50%;
+    position:relative;
+    height: 700px;;
+}
+.map-responsive iframe{
+    left: 20px;;
+    top: 20px;
+    height:1000%;
+    width:5000%;
+    position: absolute;
+}

@@ -8,7 +8,7 @@
              <Modal Export Excel -->
                  <div class="card">
                      <div class="card-body">
-                         <?php echo form_open_multipart('import_data/import_data'); ?>
+                         <?php echo form_open_multipart('importdata/upload'); ?>
                          <?php if (!empty($this->session->flashdata('status'))) { ?>
                              <div class="alert alert-info" role="alert"><?= $this->session->flashdata('status'); ?></div>
                          <?php } ?>
@@ -16,7 +16,7 @@
                          <h6 class="card-subtitle mb-2 text-muted">Pilih Excel</h6>
                          <p class="card-text">
                              Apabila Anda memiliki data yang banyak, Anda dapat mengimport data tersebut. Data yang akan diimport harus berasal dari Excel. </p>
-                         <form action="<?= base_url('import_data/import_data'); ?>" method="post" enctype="multipart/form-data">
+                         <form action="<?= base_url('data/index'); ?>" method="post" enctype="multipart/form-data">
                              <div class="form-row">
                                  <input type="file" class="form-control-file" name="importdata" id="importdata" accept=".xls,.xlsx, .csv">
                              </div>
@@ -30,8 +30,8 @@
                          <div class="m-0 font-weight-bold text-primary"><?= $title; ?> Admin
 
                              <!-- Button trigger modal -->
-                             <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#exampleModal">
-                                 Tambah Data
+                             <button type="button" class="btn btn-secondary btn-sm float-right" data-toggle="modal" data-target="#exampleModal">
+                                 Tambah Data Training
                              </button>
                          </div>
                          <div class="card-body">
@@ -114,11 +114,7 @@
                                  </div>
                                  <div class="form-group">
                                      <label for="Usia" class="col-form-label">Usia:</label>
-                                     <select class="form-control" name="usia">
-                                         <option value="0">Usia Di Bawah 30 Tahun</option>
-                                         <option value="1">Usia antara 31 s/d 60</option>
-                                         <option value="2">Usia Di Atas 60</option>
-                                     </select>
+                                     <input type="text" class="form-control" name="usia" class="form-control" id="usia" required="">
                                  </div>
                                  <div class="form-group">
                                      <label for="Hipertensi" class="col-form-label">Tekanan Darah Anda Tinggi?</label>
@@ -179,14 +175,14 @@
                                          <option value="0">Dulu Pernah</option>
                                          <option value="1">Tidak Pernah</option>
                                          <option value="2">Perokok</option>
-                                         <option value="3">Tidak Diketahui</option>
+
                                      </select>
                                  </div>
                                  <div class="form-group">
                                      <label for="Keterangan" class="col-form-label">Keterangan:</label>
                                      <select class="form-control" name="keterangan">
-                                         <option value="0">Stroke</option>
-                                         <option value="1">Tidak Stroke</option>
+                                         <option value="1">Stroke</option>
+                                         <option value="0">Tidak Stroke</option>
                                      </select>
                                  </div>
                                  <div class="modal-footer">
@@ -223,86 +219,81 @@
                                      </div>
                                      <div class="form-group">
                                          <label for="Jenis Kelamin" class="col-form-label">Jenis Kelamin:</label>
-                                         <select class="form-control" name="jenis_kelamin">
-                                             <option value="Laki-Laki">Laki-Laki</option>
-                                             <option value="Perempuan">Perempuan</option>
+                                         <select class="form-control" name="jenis_kelamin" value="<?php echo $dts['jenis_kelamin_testing']; ?>">
+                                             <option value="0">Laki-Laki</option>
+                                             <option value="1">Perempuan</option>
                                          </select>
                                      </div>
                                      <div class="form-group">
                                          <label for="Usia" class="col-form-label">Usia:</label>
-                                         <select class="form-control" name="usia">
-                                             <option value="Muda">Usia Di Bawah 30 Tahun</option>
-                                             <option value="Usia Lanjut">Usia antara 31 s/d 60</option>
-                                             <option value="Tua">Usia Di Atas 60</option>
-                                         </select>
+                                         <input type="text" class="form-control" name="usia" class="form-control" id="usia" required="">
                                      </div>
                                      <div class="form-group">
                                          <label for="Hipertensi" class="col-form-label">Tekanan Darah Anda Tinggi?</label>
                                          <select class="form-control" name="hipertensi">
-                                             <option value="Ya">Ya</option>
-                                             <option value="Tidak">Tidak</option>
+                                             <option value="0">Ya</option>
+                                             <option value="1">Tidak</option>
                                          </select>
                                      </div>
                                      <div class="form-group">
                                          <label for="Liver" class="col-form-label">Riwayat Liver?</label>
                                          <select class="form-control" name="liver">
-                                             <option value="Ya">Ya</option>
-                                             <option value="Tidak">Tidak</option>
+                                             <option value="0">Ya</option>
+                                             <option value="1">Tidak</option>
                                          </select>
                                      </div>
                                      <div class="form-group">
                                          <label for="Status Pernikahan" class="col-form-label">Status Menikah:</label>
                                          <select class="form-control" name="status_pernikahan">
-                                             <option value="Sudah Menikah">Sudah Menikah</option>
-                                             <option value="Belum Menikah">Belum Menikah</option>
+                                             <option value="0">Sudah Menikah</option>
+                                             <option value="1">Belum Menikah</option>
                                          </select>
                                      </div>
                                      <div class="form-group">
                                          <label for="Tipe Pekerjaan" class="col-form-label">Tipe Pekerjaan:</label>
                                          <select class="form-control" name="tipe_pekerjaan">
-                                             <option value="Pekerja Swasta">Pekerja Swasta</option>
-                                             <option value="Bisnis">Bisnis</option>
-                                             <option value="Pemerintahan">Pemerintahan</option>
-                                             <option value="Pekerja Anak">Pekerja Anak</option>
+                                             <option value="0">Pekerja Swasta</option>
+                                             <option value="1">Bisnis</option>
+                                             <option value="2">Pemerintahan</option>
+                                             <option value="3">Pekerja Anak</option>
                                          </select>
                                      </div>
                                      <div class="form-group">
                                          <label for="Tempat Tinggal" class="col-form-label">Tempat Tinggal:</label>
                                          <select class="form-control" name="tempat_tinggal">
-                                             <option value="Perkotaan">Perkotaan</option>
-                                             <option value="Pedesaan">Pedesaan</option>
+                                             <option value="0">Perkotaan</option>
+                                             <option value="1">Pedesaan</option>
                                          </select>
                                      </div>
                                      <div class="form-group">
                                          <label for="Rata Kadar Glukosa" class="col-form-label">Kadar Glukosa:</label>
                                          <select class="form-control" name="rata_kadar_glukosa">
-                                             <option value="Rendah">Glukosa < 130 </option>
-                                             <option value="Normal">Glukosa antara 130 sampai 200</option>
-                                             <option value="Tinggi">Glukosa > 200</option>
+                                             <option value="0">Glukosa < 130 </option>
+                                             <option value="1">Glukosa antara 130 sampai 200</option>
+                                             <option value="2">Glukosa > 200</option>
                                          </select>
                                      </div>
                                      <div class="form-group">
                                          <label for="Index Berat Badan" class="col-form-label">Index Berat Badan:</label>
                                          <select class="form-control" name="index_berat_badan">
-                                             <option value="Rendah">Index Berat Badan < 18 </option>
-                                             <option value="Normal">Index Berat Badan antara 18 sampai 25</option>
-                                             <option value="Tinggi">Index Berat Badan > 25</option>
+                                             <option value="0">Index Berat Badan < 18 </option>
+                                             <option value="1">Index Berat Badan antara 18 sampai 25</option>
+                                             <option value="2">Index Berat Badan > 25</option>
                                          </select>
                                      </div>
                                      <div class="form-group">
                                          <label for="Status Perokok" class="col-form-label">Status Merokok</label>
                                          <select class="form-control" name="status_perokok">
-                                             <option value="Dulu Pernah">Dulu Pernah</option>
-                                             <option value="Tidak Pernah">Tidak Pernah</option>
-                                             <option value="Perokok">Perokok</option>
-                                             <option value="Tidak Diketahui">Tidak Diketahui</option>
+                                             <option value="0">Dulu Pernah</option>
+                                             <option value="1">Tidak Pernah</option>
+                                             <option value="2">Perokok</option>
                                          </select>
                                      </div>
                                      <div class="form-group">
                                          <label for="Keterangan" class="col-form-label">Keterangan:</label>
                                          <select class="form-control" name="keterangan">
-                                             <option value="Stroke">Stroke</option>
-                                             <option value="Tidak Stroke">Tidak Stroke</option>
+                                             <option value="1">Stroke</option>
+                                             <option value="0">Tidak Stroke</option>
                                          </select>
                                      </div>
                                      <div class="modal-footer">

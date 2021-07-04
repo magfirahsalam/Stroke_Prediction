@@ -56,7 +56,7 @@
 
     <!-- Nav Item -->
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url() ?>data/index">
+        <a class="nav-link" href="<?= base_url() ?>data_testing_admin/index">
             <i class="fas fa-fw fa-table"></i>
             <span>Data Testing</span></a>
     </li>
@@ -71,19 +71,8 @@
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-table"></i>
-            <span>Proses</span></a>
+            <span>Prediksi</span></a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Hasil</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Performa</span></a>
-    </li>
-
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

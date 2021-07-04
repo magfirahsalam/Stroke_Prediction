@@ -7,8 +7,8 @@
             <div class="m-0 font-weight-bold text-primary">Halaman Artikel
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#exampleModal">
-                    Tambah Data
+                <button type="button" class="btn btn-secondary btn-sm float-right" data-toggle="modal" data-target="#exampleModal">
+                    Tambah Artikel
                 </button>
             </div>
             <div class="card-body">
@@ -36,9 +36,10 @@
 
                                     <td><img src="<?php echo base_url() . 'vendor/sbadmin2/img/artikel/' . $art['Gambar'] ?>" width="100"></td>
                                     <td class="text-center" width="160px">
-                                        <a href="<?= base_url() ?>Index_artikel/edit_artikel/<?php echo $art['id_artikel']; ?>" class=" btn btn-info btn-sm"><i class="fa fa-edit"></i>
-                                        </a>
-                                        <a href="<?= base_url() ?>Index_artikel/hapus_artikel/<?php echo $art['id_artikel']; ?>" class="badge badge-danger" onclick="javascript: return confirm('Anda yakin hapus?')"><i class="fa fa-trash"></i></a>
+                                        <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#editmodal<?php echo $art['Judul']; ?>">
+                                            Edit
+                                        </button>
+                                        <a href="<?= base_url() ?>Index_artikel/hapus_artikel/<?php echo $art['id_artikel']; ?>" class="badge badge-danger" onclick="javascript: return confirm('Anda yakin hapus?')">Hapus</a>
                                     </td>
 
                                 </tr>
@@ -110,17 +111,15 @@
                         <input type="hidden" name="id_artikel" value="<?php echo $art['id_artikel']; ?>">
                         <div class="form-group">
                             <label for="Judul" class="col-form-label">Judul:</label>
-                            <input type="text" class="form-control" name="Judul" class="form-control" id="Judul" value="<?php echo $art['Judul']; ?>">
+                            <input type="text" class="form-control" name="Judul" id="Judul" value="<?php echo $art['Judul']; ?>">
                         </div>
                         <div class="form-group">
                             <label for="Isi" class="col-form-label">Isi:</label>
-                            <textarea type="text" class="form-control" name="Isi" id="Isi" value="<?php echo $art['Isi']; ?>"></textarea>
-                            <!-- <input type="text" class="form-control" name="Isi" class="form-control" id="Isi" value="<?php echo $art['Isi']; ?>"> -->
+                            <textarea input type="text" class="form-control" name="Isi" id="Isi" value="<?php echo $art['Isi']; ?>"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="Penulis" class="col-form-label">Penulis:</label>
                             <input type="text" class="form-control" name="Penulis" id="Penulis" value="<?php echo $art['Penulis']; ?>"></input>
-                            <!-- <input type="text" class="form-control" name="Isi" class="form-control" id="Isi" value="<?php echo $art['Penulis']; ?>"> -->
                         </div>
                         <div class="form-group col-md-8">
                             <label for="Gambar">Gambar:</label>

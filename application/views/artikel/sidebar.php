@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('index_tampilan_admin/index'); ?>">
@@ -51,7 +51,14 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url() ?>data/index">
             <i class="fas fa-fw fa-table"></i>
-            <span>Data</span></a>
+            <span>Data Training</span></a>
+    </li>
+
+    <!-- Nav Item -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url() ?>data_testing_admin/index">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Data Testing</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
@@ -64,19 +71,8 @@
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-table"></i>
-            <span>Proses</span></a>
+            <span>Prediksi</span></a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Hasil</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Performa</span></a>
-    </li>
-
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

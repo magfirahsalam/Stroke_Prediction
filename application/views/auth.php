@@ -55,7 +55,6 @@
                <li><a href="auth" class="smoothScroll">Beranda</a></li>
                <li><a href="<?= base_url('predik_masyarakat') ?>" class="smoothScroll">Mulai Prediksi</a></li>
                <li><a href="#news" class="smoothScroll">Berita</a></li>
-               <li><a href="#google-map" class="smoothScroll">Lokasi</a></li>
                <li class="appointment-btn"><a href="<?= base_url('login') ?>">Login</a></li>
             </ul>
          </div>
@@ -219,12 +218,12 @@
                <div class="col-md-4 col-sm-6">
                   <!-- NEWS THUMB -->
                   <div class="news-thumb wow fadeInUp" data-wow-delay="0.6s">
-                     <a href="news-detail.html">
+                     <a href="artikel/artikel_terpilih">
                         <img src="images/news-image2.jpg" class="img-responsive" alt="">
                      </a>
                      <div class="news-info">
                         <span>February 20, 2018</span>
-                        <h3><a href="news-detail.html">Introducing a new healing process</a></h3>
+                        <h3><a href="artikel/artikel_terpilih">Introducing a new healing process</a></h3>
                         <p>Fusce vel sem finibus, rhoncus massa non, aliquam velit. Nam et est ligula.</p>
                         <div class="author">
                            <img src="images/author-image.jpg" class="img-responsive" alt="">
@@ -245,7 +244,7 @@
                      </a>
                      <div class="news-info">
                         <span>January 27, 2018</span>
-                        <h3><a href="news-detail.html">Review Annual Medical Research</a></h3>
+                        <h3><a href="artikel/artikel_terpilih">Review Annual Medical Research</a></h3>
                         <p>Vivamus non nulla semper diam cursus maximus. Pellentesque dignissim.</p>
                         <div class="author">
                            <img src="images/author-image.jpg" class="img-responsive" alt="">
@@ -323,7 +322,7 @@
    </section>
 
 
-   <!-- GOOGLE MAP -->
+   GOOGLE MAP
          <section id="google-map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.4967608643656!2d108.31968901462244!3d-6.329620095419319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6eb957ef43ab4d%3A0x2436dd8079b0217a!2sIndramayu%20Regency%20Regional%20General%20Hospital!5e0!3m2!1sen!2sid!4v1622643244455!5m2!1sen!2sid" width="1700" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
          </section>
@@ -392,18 +391,18 @@
                </div>
             </div>
 -->
-         <div class="col-md-12 col-sm-12 border-top">
+         <!-- <div class="col-md-12 col-sm-12 border-top">
             <div class="col-md-4 col-sm-6">
                <div class="copyright-text">
                   <p>Copyright &copy; Polindra 2021</p>
                </div>
-            </div>
-            <div class="col-md-2 col-sm-2 text-align-center">
+            </div> -->
+         <!-- <div class="col-md-2 col-sm-2 text-align-center">
                <div class="angle-up-btn">
                   <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
                </div>
-            </div>
-         </div>
+            </div> -->
+      </div>
 
       </div>
       </div>

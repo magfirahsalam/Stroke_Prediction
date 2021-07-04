@@ -91,14 +91,16 @@
                                 <li>User masuk ke aplikasi web.</li>
                                 <li>Pada halaman awal tekan button “Mulai Prediksi” atau klik menu “Prediksi” pada bagian menu bar.</li>
                                 <li>Isi form yang ada di halaman tersebut.</li>
-                                <li>Form total bilirubin merupakan kadar bilirubin yang terkandung didalam darah, normalnya berkisar antara 0.2–1.2 mg/dL. Jenis inputan adalah bilangan decimal (contoh : 0,1).</li>
-                                <li>Form Direct bilirubin merupakan kadar bilirubin yang terkonjugasi didalam darah, normalnya berkisar antara 0–0.3 mg/dL. Jenis inputan adalah bilangan decimal (contoh : 0,1).</li>
-                                <li>Form Alkaline Phospotase adalah tingkat enzim fofatase alkali di dalam darah. Normalnya berkisar antara 85-235 unit/L untuk usia kurang dari 2 tahun, untuk usia 2-8 tahun berkisar antara 65–210 unit, untuk usia 9–15 tahun berkisar antara 60–300 unit, untuk usia 16–21 tahun berkisar antara 30–200 unit. untuk usia dewasa berkisar antara 30–120 unit. Jenis inputan adalah bilangan bulat (contoh : 1, 2, 3, … dst).</li>
-                                <li>Form Alamine Aminotransferase adalah jumlah enzim yang terkandung dalam darah. Normalnya berkisar antara 10–40 unit/L untuk laki-laki dan 7–35 unit/L untuk perempuan. Jenis inputan adalah bilangan bulat.</li>
-                                <li>Form Aspartate Aminotransferase adalah jumlah enzim golongan transaminase yang berkaitan dengan system kerja hati. Normalnya berkisar antara 14–45 unit/L untuk laki–laki dan 13–37 unit/L untuk perempuan. Jenis inputan adalah bilangan bulat (contoh : 1, 2, 3, … dst).</li>
-                                <li>Form Total protein adalah jumlah total protein yang terkandung didalam darah. Normalnya berkisar antara 6-8.3 g/dL. Jenis inputan adalah bilangan decimal (contoh : 0,1).</li>
-                                <li>Form albumin adalah jumlah protein utama yang terkandung didalam darah. Normalnya berkisar antara 3.5-4.5 mg/dL. Jenis inputan adalah bilangan decimal (contoh : 0,1).</li>
-                                <li>Form Albumin dan Globulin Ratio adalah rasio perbandingan protein albumin dengan globulin. Normalnya berkisar dibawah 1. Jenis Inputan adalah bilangan decimal (contoh : 0,1).</li>
+                                <li>Form Jenis Kelamin. Anda langsung dapat memilih opsi yang tersedia</li>
+                                <li>Form Usia. Anda bisa langsung memasukkan data usia sesuai keperluan prediksi. Jenis inputan adalah bilangan asli (contoh : 12, 26, 47).</li>
+                                <li>Form Tekanan Darah Tinggi. Anda langsung dapat memilih opsi yang tersedia sesuai dengan apakah Anda memiliki tekanan arah yang tinggi atau tidak.</li>
+                                <li>Form Riwayat Liver. Anda langsung dapat memilih opsi yang tersedia sesuai dengan apakah Anda menderita penyakit liver atau tidak.</li>
+                                <li>Form Status Menikah. Anda langsung dapat memilih opsi yang tersedia sesuai dengan apakah Anda sudah menikah atau belum menikah.</li>
+                                <li>Form Tipe Pekerjaan Anda langsung dapat memilih opsi yang tersedia sesuai dengan apakah Anda pekerja swasta, pebisnis, bekera di pemerintahan, atau pekerja anak.</li>
+                                <li>Form Tempat Tinggal. Anda langsung dapat memilih opsi yang tersedia sesuai dengan apakah Anda tinggal di perkotaan atau pedesaan.</li>
+                                <li>Form Kadar Glukosa. Anda langsung dapat memilih opsi yang tersedia sesuai dengan kadar glukosa Anda.</li>
+                                <li>Form Index Berat Badan. Anda langsung dapat memilih opsi yang tersedia sesuai dengan index berat badan Anda.</li>
+                                <li>Form Status Merokok. Anda langsung dapat memilih opsi yang tersedia sesuai dengan kondisi Anda.</li>
                                 <li>Setelah mengisi form tersebut user dapat melihat hasilnya dengan menekan button "Lakukan Prediksi".</li>
                             </ol>
                         </div>
@@ -108,7 +110,7 @@
 
             <hr class="my-3">
             <br>
-            <form method="post" action="<?= base_url('predik_masyarakat/hasilprediksi'); ?>">
+            <form method="post" action="<?= base_url('predik_masyarakat/prediksi_pengunjung'); ?>">
 
                 <div class="row">
                     <div class="col-md-6">
@@ -121,11 +123,7 @@
                         </div>
                         <div class="form-group">
                             <label for="Usia" class="col-form-label">Usia:</label>
-                            <select class="form-control" name="usia">
-                                <option value="0">Usia Di Bawah 30 Tahun</option>
-                                <option value="1">Usia antara 31 s/d 60</option>
-                                <option value="2">Usia Di Atas 60</option>
-                            </select>
+                            <input type="usia" class="form-control" id="usia" name="usia" placeholder="Usia">
                         </div>
                         <div class="form-group">
                             <label for="Hipertensi" class="col-form-label">Tekanan Darah Anda Tinggi?</label>

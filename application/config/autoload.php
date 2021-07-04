@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('artikel_model', 'data_stroke_model');
+$autoload['model'] = array('artikel_model', 'data_stroke_model', 'data_testing_stroke_model', 'data_training_model', 'importdata_model');

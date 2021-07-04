@@ -117,29 +117,6 @@ class Index_artikel extends CI_Controller
                 'dibuat_pada' => $dibuat_pada,
                 'diedit_pada' => $diedit_pada
             );
-            $upload_image = $_FILES['Gambar']['file_name'];
-            if ($upload_image) {
-
-                // print_r($upload_image);
-                // exit;
-                $config['allowed_types'] = 'gif|jpg|png';
-                $config['max_size']     = '2048';
-                $config['upload_path'] = './vendor/sbadmin2/img/artikel';
-
-                $this->upload->initialize($config);
-
-                if ($this->upload->do_upload('Gambar')) {
-                    $old_image = $data['artikel']['Gambar'];
-                    unlink(FCPATH . 'vendor/sbadmin2/img/artikel' . $old_image);
-
-                    $new_image = $this->upload->data('file_name');
-                    $this->db->set('Gambar', $new_image);
-                } else {
-                    echo $this->upload->display_errors();
-                    exit;
-                }
-            }
-
             $this->db->where('id_artikel', $id_artikel);
             $this->db->update('artikel', $data);
             $this->session->set_flashdata(
@@ -164,8 +141,6 @@ class Index_artikel extends CI_Controller
                 'Gambar' => $Gambar,
                 'dibuat_pada' => $dibuat_pada,
                 'diedit_pada' => $diedit_pada
-
-
             );
 
             $this->db->where('id_artikel', $id_artikel);
@@ -177,8 +152,5 @@ class Index_artikel extends CI_Controller
             );
             redirect('Index_artikel/index');
         }
-    }
-    public function auth_artikel()
-    {
     }
 }

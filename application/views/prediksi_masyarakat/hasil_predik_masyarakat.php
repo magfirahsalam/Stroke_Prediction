@@ -48,7 +48,7 @@
                 </button>
 
                 <!-- lOGO TEXT HERE -->
-                <a href="auth" class="navbar-brand"><i></i>Prediksi Stroke</a>
+                <a href="<?= base_url('auth') ?>" class="navbar-brand"><i></i>Prediksi Stroke</a>
             </div>
 
             <!-- MENU LINKS -->

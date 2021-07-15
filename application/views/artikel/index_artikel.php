@@ -33,7 +33,6 @@
                                     <td><?php echo $art['Judul']; ?></td>
                                     <td><?php echo $art['Isi']; ?></td>
                                     <td><?php echo $art['Penulis']; ?></td>
-
                                     <td><img src="<?php echo base_url() . 'vendor/sbadmin2/img/artikel/' . $art['Gambar'] ?>" width="100"></td>
                                     <td class="text-center" width="160px">
                                         <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#editmodal<?php echo $art['Judul']; ?>">
@@ -115,7 +114,7 @@
                         </div>
                         <div class="form-group">
                             <label for="Isi" class="col-form-label">Isi:</label>
-                            <textarea input type="text" class="form-control" name="Isi" id="Isi" value="<?php echo $art['Isi']; ?>"></textarea>
+                            <textarea input type="text" class="form-control" name="Isi" id="Isi"><?php echo $art['Isi']; ?></textarea>
                         </div>
                         <div class="form-group">
                             <label for="Penulis" class="col-form-label">Penulis:</label>
@@ -125,7 +124,7 @@
                             <label for="Gambar">Gambar:</label>
                             <input type="file" name="Gambar" id="Gambar" class="form-control-sm" size="20"></input>
                         </div>
-                        <img src="<?php echo base_url() . '/vendor/sbadmin2/img/artikel/' . $art['Gambar']; ?>" width="100">
+                        <img src="<?php echo base_url() . '/vendor/sbadmin2/img/artikel/' . $art['Gambar']; ?>" value="<?php echo $art['Gambar']; ?>" width=" 100">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>

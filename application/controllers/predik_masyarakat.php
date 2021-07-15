@@ -14,50 +14,51 @@ class Predik_Masyarakat extends CI_Controller
     }
     public function prediksi_pengunjung()
     {
-        /// echo "<pre>";
+        echo "<pre>";
         $this->load->model('data_stroke_model');
         $data_stroke = $this->data_stroke_model->SemuaData();
 
         date_default_timezone_set('Asia/Jakarta');
 
-        $jenis_kelamin_pengunjung = $this->input->post('jenis_kelamin_pengunjung');
-        $usia_pengunjung = $this->input->post('usia_pengunjung');
-        $hipertensi_pengunjung = $this->input->post('hipertensi_pengunjung');
-        $liver_pengunjung = $this->input->post('liver_pengunjung');
-        $status_pernikahan_pengunjung = $this->input->post('status_pernikahan_pengunjung');
-        $tipe_pekerjaan_pengunjung = $this->input->post('tipe_pekerjaan_pengunjung');
-        $tempat_tinggal_pengunjung = $this->input->post('tempat_tinggal_pengunjung');
-        $rata_kadar_glukosa_pengunjung = $this->input->post('rata_kadar_glukosa_pengunjung');
-        $index_bb_pengunjung = $this->input->post('index_bb_pengunjung');
-        $status_perokok_pengunjung = $this->input->post('status_perokok_pengunjung');
-        $keterangan_pengunjung = $this->input->post('keterangan_pengunjung');
-        $dummy = [0, 57, 0, 1, 1, 0, 1, 2, 2, 1];
+        $jenis_kelamin_pengunjung = $this->input->post('jenis_kelamin');
+        $usia_pengunjung = $this->input->post('usia');
+        $hipertensi_pengunjung = $this->input->post('hipertensi');
+        $liver_pengunjung = $this->input->post('liver');
+        $status_pernikahan_pengunjung = $this->input->post('status_pernikahan');
+        $tipe_pekerjaan_pengunjung = $this->input->post('tipe_pekerjaan');
+        $tempat_tinggal_pengunjung = $this->input->post('tempat_tinggal');
+        $rata_kadar_glukosa_pengunjung = $this->input->post('rata_kadar_glukosa');
+        $index_bb_pengunjung = $this->input->post('index_berat_badan');
+        $status_perokok_pengunjung = $this->input->post('status_perokok');
+        $keterangan_pengunjung = $this->input->post('keterangan');
+        // $dummy = [0, 57, 0, 1, 1, 0, 1, 2, 2, 1];
         // print_r($this->input->post(NULL));
         // print_r($dummy);
-        // exit;
+        // //exit;
 
         $tempResult = [];
         foreach ($data_stroke as $value) {
-            // $result = sqrt(pow(($value->jenis_kelamin - $jenis_kelamin_pengunjung), 2)
-            //     + pow(($value->usia - $usia_pengunjung), 2)
-            //     + pow(($value->hipertensi - $hipertensi_pengunjung), 2)
-            //     + pow(($value->liver - $liver_pengunjung), 2)
-            //     + pow(($value->status_pernikahan - $status_pernikahan_pengunjung), 2)
-            //     + pow(($value->tipe_pekerjaan - $tipe_pekerjaan_pengunjung), 2)
-            //     + pow(($value->tempat_tinggal - $tempat_tinggal_pengunjung), 2)
-            //     + pow(($value->rata_kadar_glukosa - $rata_kadar_glukosa_pengunjung), 2)
-            //     + pow(($value->index_berat_badan - $index_bb_pengunjung), 2)
-            //     + pow(($value->status_perokok - $status_perokok_pengunjung), 2));
-            $result = sqrt(pow(($value->jenis_kelamin - $dummy[0]), 2)
-                + pow(($value->usia - $dummy[1]), 2)
-                + pow(($value->hipertensi - $dummy[2]), 2)
-                + pow(($value->liver - $dummy[3]), 2)
-                + pow(($value->status_pernikahan - $dummy[4]), 2)
-                + pow(($value->tipe_pekerjaan - $dummy[5]), 2)
-                + pow(($value->tempat_tinggal - $dummy[6]), 2)
-                + pow(($value->rata_kadar_glukosa - $dummy[7]), 2)
-                + pow(($value->index_berat_badan - $dummy[8]), 2)
-                + pow(($value->status_perokok - $dummy[9]), 2));
+            $result = sqrt(pow(($value->jenis_kelamin - $jenis_kelamin_pengunjung), 2)
+                + pow(($value->usia - $usia_pengunjung), 2)
+                + pow(($value->hipertensi - $hipertensi_pengunjung), 2)
+                + pow(($value->liver - $liver_pengunjung), 2)
+                + pow(($value->status_pernikahan - $status_pernikahan_pengunjung), 2)
+                + pow(($value->tipe_pekerjaan - $tipe_pekerjaan_pengunjung), 2)
+                + pow(($value->tempat_tinggal - $tempat_tinggal_pengunjung), 2)
+                + pow(($value->rata_kadar_glukosa - $rata_kadar_glukosa_pengunjung), 2)
+                + pow(($value->index_berat_badan - $index_bb_pengunjung), 2)
+                + pow(($value->status_perokok - $status_perokok_pengunjung), 2));
+            // $result = sqrt(pow(($value->jenis_kelamin - $dummy[0]), 2)
+            //     + pow(($value->usia - $dummy[1]), 2)
+            //     + pow(($value->hipertensi - $dummy[2]), 2)
+            //     + pow(($value->liver - $dummy[3]), 2)
+            //     + pow(($value->status_pernikahan - $dummy[4]), 2)
+            //     + pow(($value->tipe_pekerjaan - $dummy[5]), 2)
+            //     + pow(($value->tempat_tinggal - $dummy[6]), 2)
+            //     + pow(($value->rata_kadar_glukosa - $dummy[7]), 2)
+            //     + pow(($value->index_berat_badan - $dummy[8]), 2)
+            //     + pow(($value->status_perokok - $dummy[9]), 2));
+
             // $a[0] = pow($value->jenis_kelamin - $dummy[0], 2);
             // $a[1] = pow($value->usia - $dummy[1], 2);
             // $a[2] = pow($value->hipertensi - $dummy[2], 2);
@@ -74,8 +75,8 @@ class Predik_Masyarakat extends CI_Controller
             // exit;
             array_push($tempResult, (object)["result" => $result, "keterangan" => $value->keterangan]);
         }
-        // echo "BEFORE SHORT<br>";
-        // print_r($tempResult);
+        echo "BEFORE SHORT<br>";
+        print_r($tempResult);
 
 
         usort($tempResult, function ($a, $b) {
@@ -83,11 +84,11 @@ class Predik_Masyarakat extends CI_Controller
         });
 
 
-        // echo "AFTER SHORT<br>";
-        // print_r($tempResult);
+        echo "AFTER SHORT<br>";
+        print_r($tempResult);
 
-        $result = $this->result_knn(5, $tempResult);
-        //print_r($result);
+        $result = $this->result_knn(3, $tempResult);
+        //  print_r($result);
         $data["result"] = $result;
         $this->load->view('prediksi_masyarakat/hasil_predik_masyarakat', $data);
         // get 3 data teratas
@@ -126,7 +127,7 @@ class Predik_Masyarakat extends CI_Controller
                 }
             }
         }
-        // print_r($count);
+        print_r($count);
         return $data[array_search(max($count), $count)];
         // for ($i = 0; $i < $k; $i++) {
         //     $count[$i] = 0;

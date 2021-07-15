@@ -305,8 +305,9 @@
                              </div>
                          </div>
                          <!-- Akhir Modal Edit -->
-                     <?php endforeach; ?>
+
                      </div>
+                 <?php endforeach; ?>
          </div>
      </div>
  </div>

@@ -10,6 +10,7 @@ class Auth extends CI_Controller
 
     public function index()
     {
-        $this->load->view('auth');
+        $data['artikel'] = $this->artikel_model->SemuaData();
+        $this->load->view('auth', $data);
     }
 }

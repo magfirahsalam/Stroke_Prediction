@@ -211,59 +211,67 @@
 
 
    <!-- NEWS -->
-   < <section id="news" data-stellar-background-ratio="2.5">
+   <section id="news" data-stellar-background-ratio="2.5">
       <div class="container">
-         <div class="row">
-            <div class="col-md-12 col-sm-12">
-               <div class="col-md-4 col-sm-6">
-                  <!-- NEWS THUMB -->
+         <h1>Artikel</h1>
+         <?php foreach ($artikel as $ds) : ?>
+            <div class="row">
+               <div class="col-md-12 col-sm-12">
                   <div class="news-thumb wow fadeInUp" data-wow-delay="0.6s">
-                     <a href="artikel/artikel_terpilih">
-                        <img src="images/news-image2.jpg" class="img-responsive" alt="">
+                     <a href="Index_artikel/detail_artikel/<?php echo $ds['id_artikel'] ?>">
+                        <img src="<?php echo base_url() . 'vendor/sbadmin2/img/artikel/' . $ds['Gambar'] ?>" width="500">
                      </a>
                      <div class="news-info">
-                        <span>February 20, 2018</span>
-                        <h3><a href="artikel/artikel_terpilih">Introducing a new healing process</a></h3>
-                        <p>Fusce vel sem finibus, rhoncus massa non, aliquam velit. Nam et est ligula.</p>
-                        <div class="author">
-                           <img src="images/author-image.jpg" class="img-responsive" alt="">
+                        <h3>Judul : <a href="<?= base_url() ?>Index_artikel/detail_artikel/<?php echo $ds['id_artikel'] ?>"><?php echo $ds['Judul']; ?></a></h3>
+                        <p>Isi : <?php echo $ds['Isi']; ?></p>
+                        <div class=" author">
+                           <img src="https://www.pngitem.com/pimgs/m/24-248235_user-profile-avatar-login-account-fa-user-circle.png" class="img-responsive" alt="">
                            <div class="author-info">
-                              <h5>Jason Stewart</h5>
-                              <p>General Director</p>
+                              <h5>Author : <?php echo $ds['Penulis']; ?></h5>
+
                            </div>
                         </div>
                      </div>
                   </div>
-               </div>
 
-               <div class="col-md-4 col-sm-6">
-                  <!-- NEWS THUMB -->
-                  <div class="news-thumb wow fadeInUp" data-wow-delay="0.8s">
-                     <a href="news-detail.html">
-                        <img src="images/news-image3.jpg" class="img-responsive" alt="">
-                     </a>
-                     <div class="news-info">
-                        <span>January 27, 2018</span>
-                        <h3><a href="artikel/artikel_terpilih">Review Annual Medical Research</a></h3>
-                        <p>Vivamus non nulla semper diam cursus maximus. Pellentesque dignissim.</p>
-                        <div class="author">
-                           <img src="images/author-image.jpg" class="img-responsive" alt="">
-                           <div class="author-info">
-                              <h5>Andrio Abero</h5>
-                              <p>Online Advertising</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
 
+                  <!-- <?php
+                        foreach ($data as $ds) : ?>
+                  <tr>
+                     <td><?php echo $id_data_stroke++; ?></td>
+                     <td><?php echo $ds['id_pasien']; ?></td>
+                     <td><?php echo $ds['jenis_kelamin']; ?></td>
+                     <td><?php echo $ds['usia']; ?></td>
+                     <td><?php echo $ds['hipertensi']; ?></td>
+                     <td><?php echo $ds['liver']; ?></td>
+                     <td><?php echo $ds['status_pernikahan']; ?></td>
+                     <td><?php echo $ds['tipe_pekerjaan']; ?></td>
+                     <td><?php echo $ds['tempat_tinggal']; ?></td>
+                     <td><?php echo $ds['rata_kadar_glukosa']; ?></td>
+                     <td><?php echo $ds['index_berat_badan']; ?></td>
+                     <td><?php echo $ds['status_perokok']; ?></td>
+                     <td><?php echo $ds['keterangan']; ?></td>
+                     <td>
+                        <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#editmodal<?php echo $ds['id_data_stroke']; ?>">
+                           Edit
+                        </button>
+                        <a href="<?= base_url() ?>data/hapus_data_stroke/<?php echo $ds['id_data_stroke']; ?>" class="badge badge-danger">Hapus</a>
+
+                     </td>
+                  </tr>
+                  </tbody>
+               <?php endforeach; ?> -->
+
+
+
+               </div>
             </div>
-         </div>
-         </section>
+         <?php endforeach; ?>
+   </section>
 
 
-         <!-- MAKE AN APPOINTMENT -->
-         <!--  <section id="appointment" data-stellar-background-ratio="3">
+   <!-- MAKE AN APPOINTMENT -->
+   <!--  <section id="appointment" data-stellar-background-ratio="3">
       <div class="container">
          <div class="row">
 
@@ -273,10 +281,10 @@
 
             <div class="col-md-6 col-sm-6">
                <!-- CONTACT FORM HERE -->
-         <!-- <form id="appointment-form" role="form" method="post" action="#">
+   <!-- <form id="appointment-form" role="form" method="post" action="#">
 
                   <!-- SECTION TITLE -->
-         <!-- <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+   <!-- <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
                      <h2>Make an appointment</h2>
                   </div>
 
@@ -329,7 +337,7 @@
 
 
          <!-- FOOTER -->
-         <!-- <footer data-stellar-background-ratio="5">
+   <!-- <footer data-stellar-background-ratio="5">
       <div class="container">
          <div class="row">
 
@@ -391,32 +399,32 @@
                </div>
             </div>
 -->
-         <!-- <div class="col-md-12 col-sm-12 border-top">
+   <!-- <div class="col-md-12 col-sm-12 border-top">
             <div class="col-md-4 col-sm-6">
                <div class="copyright-text">
                   <p>Copyright &copy; Polindra 2021</p>
                </div>
             </div> -->
-         <!-- <div class="col-md-2 col-sm-2 text-align-center">
+   <!-- <div class="col-md-2 col-sm-2 text-align-center">
                <div class="angle-up-btn">
                   <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
                </div>
             </div> -->
-      </div>
+   </div>
 
-      </div>
-      </div>
-      </footer>
+   </div>
+   </div>
+   </footer>
 
-      <!-- SCRIPTS -->
-      <script src="<?= base_url() ?>assets/care/js/jquery.js"></script>
-      <script src="<?= base_url() ?>assets/care/js/bootstrap.min.js"></script>
-      <script src="<?= base_url() ?>assets/care/js/jquery.sticky.js"></script>
-      <script src="<?= base_url() ?>assets/care/js/jquery.stellar.min.js"></script>
-      <script src="<?= base_url() ?>assets/care/js/wow.min.js"></script>
-      <script src="<?= base_url() ?>assets/care//js/smoothscroll.js"></script>
-      <script src="<?= base_url() ?>assets/care/js/owl.carousel.min.js"></script>
-      <script src="<?= base_url() ?>assets/care/js/custom.js"></script>
+   <!-- SCRIPTS -->
+   <script src="<?= base_url() ?>assets/care/js/jquery.js"></script>
+   <script src="<?= base_url() ?>assets/care/js/bootstrap.min.js"></script>
+   <script src="<?= base_url() ?>assets/care/js/jquery.sticky.js"></script>
+   <script src="<?= base_url() ?>assets/care/js/jquery.stellar.min.js"></script>
+   <script src="<?= base_url() ?>assets/care/js/wow.min.js"></script>
+   <script src="<?= base_url() ?>assets/care//js/smoothscroll.js"></script>
+   <script src="<?= base_url() ?>assets/care/js/owl.carousel.min.js"></script>
+   <script src="<?= base_url() ?>assets/care/js/custom.js"></script>
 
 
 </body>

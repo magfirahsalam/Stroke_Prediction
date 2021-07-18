@@ -50,7 +50,7 @@
 
     <!-- Nav Item -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="<?= base_url() ?>prediksi_tim_medis/index">
             <i class="fas fa-fw fa-table"></i>
             <span>Prediksi</span></a>
     </li>

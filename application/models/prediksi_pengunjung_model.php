@@ -19,8 +19,8 @@ class Prediksi_pengunjung_model extends CI_Model
             return 0;
         }
     }
-    public function tambah_prediksi_pengunjung($prediksi_pengunjung_umum, $table)
+    public function tambah_prediksi_pengunjung($prediksi_pengunjung)
     {
-        return $this->db->insert('prediksi_pengunjung_umum', $prediksi_pengunjung_umum);
+        return $this->db->insert('prediksi', $prediksi_pengunjung);
     }
 }

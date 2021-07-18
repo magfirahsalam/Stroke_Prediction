@@ -28,7 +28,7 @@
 
                          <!-- Button trigger modal -->
                          <button type="button" class="btn btn-secondary btn-sm float-right" data-toggle="modal" data-target="#exampleModal">
-                             Tambah Data
+                             Tambah Data Prediksi
                          </button>
                      </div>
                      <div class="card-body">
@@ -37,7 +37,6 @@
                                  <thead>
                                      <tr>
                                          <td>Id Data Stroke</td>
-                                         <td>Id pasien</td>
                                          <td>Jenis Kelamin</td>
                                          <td>Usia</td>
                                          <td>Tekanan Darah Tinggi</td>
@@ -54,27 +53,27 @@
                                  </thead>
                                  <tbody>
                                      <?php
-                                        $id_data_stroke_tim_medis = 1;
-                                        foreach ($data_stroke_tim_medis as $dstm) : ?>
+                                        $id_prediksi = 1;
+                                        foreach ($prediksi as $pdk) : ?>
                                          <tr>
-                                             <td><?php echo $id_data_stroke_tim_medis++; ?></td>
-                                             <td><?php echo $dstm['id_pasien']; ?></td>
-                                             <td><?php echo $dstm['jenis_kelamin']; ?></td>
-                                             <td><?php echo $dstm['usia']; ?></td>
-                                             <td><?php echo $dstm['hipertensi']; ?></td>
-                                             <td><?php echo $dstm['liver']; ?></td>
-                                             <td><?php echo $dstm['status_pernikahan']; ?></td>
-                                             <td><?php echo $dstm['tipe_pekerjaan']; ?></td>
-                                             <td><?php echo $dstm['tempat_tinggal']; ?></td>
-                                             <td><?php echo $dstm['rata_kadar_glukosa']; ?></td>
-                                             <td><?php echo $dstm['index_berat_badan']; ?></td>
-                                             <td><?php echo $dstm['status_perokok']; ?></td>
-                                             <td><?php echo $dstm['keterangan']; ?></td>
+                                             <td><?php echo $id_prediksi++; ?></td>
+                                             <td><?php echo $pdk['jenis_kelamin_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['usia_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['hipertensi_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['liver_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['status_pernikahan_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['tipe_pekerjaan_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['tempat_tinggal_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['rata_kadar_glukosa_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['index_bb_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['status_perokok_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['keterangan_pengunjung']; ?></td>
                                              <td>
-                                                 <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#editmodal<?php echo $dstm['id_data_stroke_tim_medis']; ?>">
+                                                 <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#editmodal<?php echo $pdk['id_prediksi']; ?>">
                                                      Edit
                                                  </button>
-                                                 <a href="<?= base_url() ?>data_stroke_tim_medis/hapus_data_stroke_tim_medis/<?php echo $dstm['id_data_stroke_tim_medis']; ?>" class="badge badge-danger">Hapus</a>
+                                                 <a href="<?= base_url() ?>prediksi_tim_medis/hapus_data_prediksi_tim_medis/<?php echo $pdk['id_prediksi']; ?>" class="badge badge-danger">Hapus</a>
+                                                 <button type="button" a href="<?= base_url() ?>prediksi_tim_medis/tambah_ke_data_training/<?php echo $pdk['id_prediksi']; ?>" class="badge badge-warning">Tambah ke Data Training</button>
 
                                              </td>
                                          </tr>
@@ -198,10 +197,10 @@
 
              </div>
              <!-- Modal Edit Data -->
-             <?php $id_data_stroke_tim_medis = 0;
-                foreach ($data_stroke_tim_medis as $dstm) : $id_data_stroke_tim_medis++; ?>
+             <?php $id_prediksi = 0;
+                foreach ($prediksi as $pdk) : $id_prediksi++; ?>
 
-                 <div class="modal fade" id="editmodal<?php echo $ds['id_data_stroke']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                 <div class="modal fade" id="editmodal<?php echo $pdk['id_prediksi']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                      <div class="modal-dialog" role="document">
                          <div class="modal-content">
                              <div class="modal-header">

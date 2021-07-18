@@ -1,10 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
-class Tempat_Berobat extends CI_Controller
+class Prediksi_tim_medis_model extends CI_Model
 {
     public function index()
     {
-        $this->load->view('place/tempat_berobat');
+        return $this->db->get('prediksi')->result_array();
     }
 }

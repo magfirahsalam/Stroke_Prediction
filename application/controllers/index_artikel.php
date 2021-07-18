@@ -11,7 +11,7 @@ class Index_artikel extends CI_Controller
         $data['artikel'] = $this->artikel_model->SemuaData();
 
         $this->load->view('artikel/header', $data);
-        $this->load->view('artikel/sidebar', $data);
+        $this->load->view('templates/sidebar', $data);
         $this->load->view('artikel/topbar', $data);
         $this->load->view('artikel/index_artikel', $data);
         $this->load->view('artikel/footer');

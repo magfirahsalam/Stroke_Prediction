@@ -50,17 +50,15 @@
                 </button>
 
                 <!-- lOGO TEXT HERE -->
-                <a href="index.html" class="navbar-brand"><i></i>Prediksi Stroke</a>
+                <a href="<?= base_url('auth') ?>" class="navbar-brand"><i></i>Prediksi Stroke</a>
             </div>
 
             <!-- MENU LINKS -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="auth" class="smoothScroll">Beranda</a></li>
-                    <li><a href="#about" class="smoothScroll">Tentang</a></li>
+                    <li><a href="<?= base_url('auth') ?>" class="smoothScroll">Beranda</a></li>
                     <li><a href="<?= base_url('predik_masyarakat') ?>" class="smoothScroll">Mulai Prediksi</a></li>
-                    <li><a href="#news" class="smoothScroll">Berita</a></li>
-                    <li><a href="#google-map" class="smoothScroll">Lokasi</a></li>
+                    <li><a href="#news" class="smoothScroll">Artikel</a></li>
                     <li class="appointment-btn"><a href="<?= base_url('login') ?>">Login</a></li>
                 </ul>
             </div>
@@ -73,33 +71,22 @@
     <section id="news-detail" data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row">
-
                 <div class="col-md-8 col-sm-7">
+
                     <!-- NEWS THUMB -->
                     <div class="news-detail-thumb">
                         <div class="news-image">
-                            <img src="images/news-image3.jpg" class="img-responsive" alt="">
+                            <img src="<?php echo base_url() . 'vendor/sbadmin2/img/artikel/' . $artikel['Gambar'] ?>" class="img-responsive" alt="">
                         </div>
-                        <h3>Review Annual Medical Research</h3>
-                        <p>Aenean molestie porttitor lorem sed semper. Aliquam semper iaculis libero, eu finibus ex euismod at. In molestie justo ut egestas porttitor. Phasellus interdum erat eu lectus condimentum euismod. Sed pellentesque fringilla diam vitae congue. Ut rutrum diam nisi, in maximus felis vulputate vitae.</p>
-                        <blockquote>Vestibulum gravida rutrum est non volutpat. Morbi imperdiet odio ut tempor vestibulum. Mauris tincidunt vehicula nibh, sodales vehicula erat imperdiet ut.</blockquote>
-                        <p>Maecenas eu lorem gravida nisi aliquam porta. Etiam eu tellus enim. Vivamus ligula ex, iaculis a sodales et, placerat eget neque. In porttitor tortor in purus commodo lobortis. Nullam ornare quam ac turpis luctus, commodo facilisis nisi venenatis. Cras a posuere risus.</p>
-
-                        <ul>
-                            <li>Phasellus posuere nisi eleifend, vestibulum ipsum eleifend</li>
-                            <li>Nulla sapien neque, posuere vitae porta eu</li>
-                            <li>Fusce quis enim vel libero pulvinar gravida sed eu justo</li>
-                        </ul>
-
-                        <p>Nunc eget ex sed nisl rhoncus lacinia. Vestibulum porta lectus at est placerat, nec commodo purus dignissim. Suspendisse ac quam in metus laoreet auctor ac quis enim.</p>
+                        <h3><?php echo $artikel['Judul']; ?></a></h3>
+                        <p><?php echo $artikel['Isi']; ?></a></p>
                     </div>
                 </div>
-
                 <div class="col-md-4 col-sm-5">
                     <div class="news-sidebar">
                         <div class="news-author">
                             <h4>About the author</h4>
-                            <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque.</p>
+                            <p><?php echo $artikel['Penulis']; ?></p>
                         </div>
 
                         <div class="recent-post">
@@ -125,104 +112,10 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- </?php endforeach; ?> -->
             </div>
         </div>
     </section>
-
-
-
-    <!-- FOOTER -->
-    <!-- <footer data-stellar-background-ratio="5">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-4 col-sm-4">
-                    <div class="footer-thumb">
-                        <h4 class="wow fadeInUp" data-wow-delay="0.4s">Contact Info</h4>
-                        <p>Fusce at libero iaculis, venenatis augue quis, pharetra lorem. Curabitur ut dolor eu elit consequat ultricies.</p>
-
-                        <div class="contact-info">
-                            <p><i class="fa fa-phone"></i> 010-070-0170</p>
-                            <p><i class="fa fa-envelope-o"></i> <a href="#">info@company.com</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-4">
-                    <div class="footer-thumb">
-                        <h4 class="wow fadeInUp" data-wow-delay="0.4s">Latest News</h4>
-                        <div class="latest-stories">
-                            <div class="stories-image">
-                                <a href="#"><img src="images/news-image.jpg" class="img-responsive" alt=""></a>
-                            </div>
-                            <div class="stories-info">
-                                <a href="#">
-                                    <h5>Amazing Technology</h5>
-                                </a>
-                                <span>March 08, 2018</span>
-                            </div>
-                        </div>
-
-                        <div class="latest-stories">
-                            <div class="stories-image">
-                                <a href="#"><img src="images/news-image.jpg" class="img-responsive" alt=""></a>
-                            </div>
-                            <div class="stories-info">
-                                <a href="#">
-                                    <h5>New Healing Process</h5>
-                                </a>
-                                <span>February 20, 2018</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-4">
-                    <div class="footer-thumb">
-                        <div class="opening-hours">
-                            <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opening Hours</h4>
-                            <p>Monday - Friday <span>06:00 AM - 10:00 PM</span></p>
-                            <p>Saturday <span>09:00 AM - 08:00 PM</span></p>
-                            <p>Sunday <span>Closed</span></p>
-                        </div>
-
-                        <ul class="social-icon">
-                            <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-instagram"></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 border-top">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="copyright-text">
-                            <p>Copyright &copy; 2018 Your Company
-
-                                | Design: Tooplate</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6">
-                        <div class="footer-link">
-                            <a href="#">Laboratory Tests</a>
-                            <a href="#">Departments</a>
-                            <a href="#">Insurance Policy</a>
-                            <a href="#">Careers</a>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-sm-2 text-align-center">
-                        <div class="angle-up-btn">
-                            <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </footer>
-
-
     <!-- SCRIPTS -->
     <script src="<?= base_url() ?>assets/care/js/jquery.js"></script>
     <script src="<?= base_url() ?>assets/care/js/bootstrap.min.js"></script>

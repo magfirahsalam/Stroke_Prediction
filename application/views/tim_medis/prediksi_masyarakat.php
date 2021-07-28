@@ -28,7 +28,7 @@
 
                          <!-- Button trigger modal -->
                          <button type="button" class="btn btn-secondary btn-sm float-right" data-toggle="modal" data-target="#exampleModal">
-                             Tambah Data Prediksi Tim Medis
+                             Tambah Data Prediksi
                          </button>
                      </div>
                      <div class="card-body">
@@ -37,7 +37,6 @@
                                  <thead>
                                      <tr>
                                          <td>Id Prediksi</td>
-                                         <td>Id Pasien</td>
                                          <td>Jenis Kelamin</td>
                                          <td>Usia</td>
                                          <td>Tekanan Darah Tinggi</td>
@@ -48,35 +47,34 @@
                                          <td>Kadar Glukosa</td>
                                          <td>Index Berat Badan</td>
                                          <td>Status Merokok</td>
-                                         <td>Hasil Prediksi</td>
+                                         <td>Keterangan</td>
                                          <td>Dibuat Pada</td>
                                          <td>Aksi</td>
                                      </tr>
                                  </thead>
                                  <tbody>
                                      <?php
-                                        $id_prediksi_tim_medis = 1;
-                                        foreach ($prediksi_tim_medis as $pdktm) : ?>
+                                        $id_prediksi = 1;
+                                        foreach ($prediksi as $pdk) : ?>
                                          <tr>
-                                             <td><?php echo $id_prediksi_tim_medis++; ?></td>
-                                             <td><?php echo $pdktm['id_pasien_tm']; ?></td>
-                                             <td><?php echo $pdktm['jenis_kelamin_tm']; ?></td>
-                                             <td><?php echo $pdktm['usia_tm']; ?></td>
-                                             <td><?php echo $pdktm['hipertensi_tm']; ?></td>
-                                             <td><?php echo $pdktm['liver_tm']; ?></td>
-                                             <td><?php echo $pdktm['status_pernikahan_tm']; ?></td>
-                                             <td><?php echo $pdktm['tipe_pekerjaan_tm']; ?></td>
-                                             <td><?php echo $pdktm['tempat_tinggal_tm']; ?></td>
-                                             <td><?php echo $pdktm['rata_kadar_glukosa_tm']; ?></td>
-                                             <td><?php echo $pdktm['index_bb_tm']; ?></td>
-                                             <td><?php echo $pdktm['status_perokok_tm']; ?></td>
-                                             <td><?php echo $pdktm['hasil_prediksi_tm']; ?></td>
-                                             <td><?php echo $pdktm['dibuat_pada']; ?></td>
+                                             <td><?php echo $id_prediksi++; ?></td>
+                                             <td><?php echo $pdk['jenis_kelamin_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['usia_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['hipertensi_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['liver_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['status_pernikahan_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['tipe_pekerjaan_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['tempat_tinggal_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['rata_kadar_glukosa_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['index_bb_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['status_perokok_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['keterangan_pengunjung']; ?></td>
+                                             <td><?php echo $pdk['dibuat_pada']; ?></td>
                                              <td>
                                                  <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#editmodal<?php echo $pdk['id_prediksi']; ?>">
                                                      Edit
                                                  </button>
-                                                 <a href="<?= base_url() ?>prediksi_tim_medis/hapus_data_prediksim/<?php echo $pdk['id_prediksi']; ?>" class="badge badge-danger">Hapus</a>
+                                                 <a href="<?= base_url() ?>predik_masyarakat/hapus_data_prediksim/<?php echo $pdk['id_prediksi']; ?>" class="badge badge-danger">Hapus</a>
                                                  <!--<button type="button" a href="</?= base_url() ?>predik_masyarakat/jadi_data_training/</?php echo $pdk['id_prediksi']; ?>" class="badge badge-warning">Jadi Data Training</button>
 
                                              </td>
@@ -94,50 +92,52 @@
                                                      <div class="modal-dialog" role="document">
                                                          <div class="modal-content">
                                                              <div class="modal-header">
-                                                                 <h5 class="modal-title" id="exampleModalLabel">Form Tambah Data Prediksi Tim Medis</h5>
+                                                                 <h5 class="modal-title" id="exampleModalLabel">Form Tambah Data Prediksi </h5>
                                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                      <span aria-hidden="true">&times;</span>
                                                                  </button>
                                                              </div>
                                                              <div class="modal-body">
-                                                                 <?php echo form_open_multipart('prediksi_tim_medis/proses_tambah_data_prediksitm'); ?>
-                                                                 <div class="form-group">
-                                                                     <label for="Id Pasien" class="col-form-label">Id Pasien:</label>
-                                                                     <input type="text" class="form-control" name="id_pasien" class="form-control" id="id_pasien" required="">
-                                                                 </div>
+                                                                 <?php echo form_open_multipart('predik_masyarakat/proses_tambah_data_prediksim'); ?>
+                                                                 <!-- <div class="form-group">
+                                 <label for="Id Pasien" class="col-form-label">Id Pasien:</label>
+                                 <input type="text" class="form-control" name="id_pasien" class="form-control" id="id_pasien" required="">
+                             </div> -->
                                                                  <div class="form-group">
                                                                      <label for="Jenis Kelamin" class="col-form-label">Jenis Kelamin:</label>
-                                                                     <select class="form-control" name="jenis_kelamin_tm">
+                                                                     <select class="form-control" name="jenis_kelamin_pengunjung">
                                                                          <option value="0">Laki-Laki</option>
                                                                          <option value="1">Perempuan</option>
                                                                      </select>
                                                                  </div>
                                                                  <div class="form-group">
                                                                      <label for="Usia" class="col-form-label">Usia:</label>
-                                                                     <input type="usia" class="form-control" id="usia" name="usia_tm" placeholder="Usia">
+                                                                     <input type="usia" class="form-control" id="usia" name="usia_pengunjung" placeholder="Usia">
                                                                  </div>
                                                                  <div class="form-group">
                                                                      <label for="Hipertensi" class="col-form-label">Tekanan Darah Anda Tinggi?</label>
-                                                                     <select class="form-control" name="hipertensi_tm
-                                                                         <option value=" 1">Tidak</option>
+                                                                     <select class="form-control" name="hipertensi_pengunjung">
+                                                                         <option value="0">Ya</option>
+                                                                         <option value="1">Tidak</option>
                                                                      </select>
                                                                  </div>
                                                                  <div class="form-group">
                                                                      <label for="Liver" class="col-form-label">Riwayat Liver?</label>
-                                                                     <select class="form-control" name="liver_tm">
+                                                                     <select class="form-control" name="liver_pengunjung">
                                                                          <option value="0">Ya</option>
                                                                          <option value="1">Tidak</option>
                                                                      </select>
                                                                  </div>
                                                                  <div class="form-group">
                                                                      <label for="Status Pernikahan" class="col-form-label">Status Menikah:</label>
-                                                                     <select class="form-control" name="status_pernikahan_tm
-                                                                         <option value=" 1">Belum Menikah</option>
+                                                                     <select class="form-control" name="status_pernikahan_pengunjung">
+                                                                         <option value="0">Sudah Menikah</option>
+                                                                         <option value="1">Belum Menikah</option>
                                                                      </select>
                                                                  </div>
                                                                  <div class="form-group">
                                                                      <label for="Tipe Pekerjaan" class="col-form-label">Tipe Pekerjaan:</label>
-                                                                     <select class="form-control" name="tipe_pekerjaan_tm">
+                                                                     <select class="form-control" name="tipe_pekerjaan_pengunjung">
                                                                          <option value="0">Pekerja Swasta</option>
                                                                          <option value="1">Bisnis</option>
                                                                          <option value="2">Pemerintahan</option>
@@ -146,14 +146,14 @@
                                                                  </div>
                                                                  <div class="form-group">
                                                                      <label for="Tempat Tinggal" class="col-form-label">Tempat Tinggal:</label>
-                                                                     <select class="form-control" name="tempat_tinggal_tm">
+                                                                     <select class="form-control" name="tempat_tinggal_pengunjung">
                                                                          <option value="0">Perkotaan</option>
                                                                          <option value="1">Pedesaan</option>
                                                                      </select>
                                                                  </div>
                                                                  <div class="form-group">
                                                                      <label for="Rata Kadar Glukosa" class="col-form-label">Kadar Glukosa:</label>
-                                                                     <select class="form-control" name="rata_kadar_glukosa_tm">
+                                                                     <select class="form-control" name="rata_kadar_glukosa_pengunjung">
                                                                          <option value="0">Glukosa < 130 </option>
                                                                          <option value="1">Glukosa antara 130 sampai 200</option>
                                                                          <option value="2">Glukosa > 200</option>
@@ -194,8 +194,8 @@
 
                                                  </div>
                                                  <!-- Modal Edit Data -->
-                                                 <?php $id_prediksi_tim_medis = 0;
-                                                    foreach ($prediksi_tim_medis as $pdktm) : $id_prediksi_tim_medis++; ?>
+                                                 <?php $id_prediksi = 0;
+                                                    foreach ($prediksi as $pdk) : $id_prediksi++; ?>
 
                                                      <div class="modal fade" id="editmodal<?php echo $pdk['id_prediksi']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                          <div class="modal-dialog" role="document">

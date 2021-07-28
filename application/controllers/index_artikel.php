@@ -88,18 +88,22 @@ class Index_artikel extends CI_Controller
         $this->load->view('artikel/edit_artikel', $data);
         $this->load->view('artikel/footer');
     }
-    public function detail_artikel($id_artikel)
+    public function detail_artikel($id_artikel) //$id_artikel)
     {
-        $data['title'] = 'Detail Artikel';
-        $data['user'] = $this->db->get_where('user', ['email'
-        => $this->session->userdata('email')])->row_array();
+        // $data['title'] = 'Detail Artikel';
+        // $data['user'] = $this->db->get_where('user', ['email'
+        // => $this->session->userdata('email')])->row_array();
 
         $data['artikel'] = $this->artikel_model->ambil_id_artikel($id_artikel);
-        $this->load->view('artikel/header', $data);
-        $this->load->view('artikel/sidebar', $data);
-        $this->load->view('artikel/topbar', $data);
-        $this->load->view('artikel/edit_artikel', $data);
-        $this->load->view('artikel/footer');
+        // $this->load->view('artikel/header', $data);
+        // $this->load->view('artikel/sidebar', $data);
+        // $this->load->view('artikel/topbar', $data);
+        // $this->load->view('artikel/edit_artikel', $data);
+        // $this->load->view('artikel/footer');
+        return $this->load->view('artikel/artikel_terpilih', $data);
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
     }
     public function proses_edit_artikel()
     {

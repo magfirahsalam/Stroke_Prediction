@@ -54,7 +54,7 @@
             <ul class="nav navbar-nav navbar-right">
                <li><a href="auth" class="smoothScroll">Beranda</a></li>
                <li><a href="<?= base_url('predik_masyarakat') ?>" class="smoothScroll">Mulai Prediksi</a></li>
-               <li><a href="#news" class="smoothScroll">Berita</a></li>
+               <li><a href="#news" class="smoothScroll">Artikel</a></li>
                <li class="appointment-btn"><a href="<?= base_url('login') ?>">Login</a></li>
             </ul>
          </div>
@@ -103,10 +103,10 @@
    <!-- NEWS -->
    <section id="news" data-stellar-background-ratio="2.5">
       <div class="container">
-         <h2>Berita</h2>
-         <?php foreach ($artikel as $ds) : ?>
-            <div class="row">
-               <div class="col-md-12 col-sm-12">
+         <h2>Artikel</h2>
+         <div class="row">
+            <div class="col-md-12 col-sm-12">
+               <?php foreach ($artikel as $ds) : ?>
                   <div class="news-thumb wow fadeInUp" data-wow-delay="0.5s">
                      <a href="Index_artikel/detail_artikel/<?php echo $ds['id_artikel'] ?>">
                         <img src="<?php echo base_url() . 'vendor/sbadmin2/img/artikel/' . $ds['Gambar'] ?>" width="200">
@@ -153,9 +153,9 @@
 
 
 
-               </div>
             </div>
-         <?php endforeach; ?>
+         </div>
+      <?php endforeach; ?>
    </section>
 
 

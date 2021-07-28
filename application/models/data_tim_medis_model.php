@@ -8,11 +8,12 @@ class Data_tim_medis_model extends CI_Model
     }
     public function SemuaData()
     {
-        return $this->db->get('data_tim_medis')->result();
+        return $this->db->get('data_tim_medis')->result_array();
     }
     public function proses_tambah_data_tim_medis()
     {
         $data = [
+            "id_tim_medis" => $this->input->post('id_tim_medis'),
             "nama_tim_medis" => $this->input->post('nama_tim_medis'),
             "email" => $this->input->post('email'),
         ];
@@ -20,7 +21,7 @@ class Data_tim_medis_model extends CI_Model
     }
     public function hapus_data_tim_medis($id_tim_medis)
     {
-        $this->db->where('id_data_tim_medis', $id_tim_medis);
+        $this->db->where('id_tim_medis', $id_tim_medis);
         $this->db->delete('data_tim_medis');
     }
     public function ambil_id_tim_medis($id_tim_medis)
@@ -30,6 +31,7 @@ class Data_tim_medis_model extends CI_Model
     public function proses_edit_data_tim_medis()
     {
         $data = [
+            "id_tim_medis" => $this->input->post('id_tim_medis'),
             "nama_tim_medis" => $this->input->post('nama_tim_medis'),
             "email" => $this->input->post('email'),
         ];

@@ -3,81 +3,80 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Prediksi_tim_medis extends CI_Controller
 {
-
-    public function index()
+    public function tampildatatm()
     {
         $data['title'] = 'Data Prediksi Tim Medis';
         $data['user'] = $this->db->get_where('user', ['email'
         => $this->session->userdata('email')])->row_array();
 
-        $data['prediksi'] = $this->prediksi_tim_medis_model->index();
+        $data['prediksi_tim_medis'] = $this->prediksi_tim_medis_model->indexdata();
         $this->load->view('data/header', $data);
         $this->load->view('tim_medis/sidebar', $data);
         $this->load->view('tim_medis/topbar', $data);
         $this->load->view('tim_medis/prediksi_tim_medis', $data);
         $this->load->view('data/footer');
     }
-    public function tambah_data_stroke()
+    public function prediksitm()
     {
-        $data['title'] = 'Tambah Data';
+        $data['title'] = 'Prediksi';
         $data['user'] = $this->db->get_where('user', ['email'
         => $this->session->userdata('email')])->row_array();
 
-        $data['data_stroke'] = $this->data_stroke_model->SemuaData();
+        // // $data['prediksi_tim_medis'] = $this->prediksi_pengunjung_model->tambah_prediksi_tm();
         $this->load->view('data/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('data/tambah_data_stroke', $data);
+        $this->load->view('tim_medis/sidebar', $data);
+        $this->load->view('tim_medis/topbar', $data);
+        $this->load->view('tim_medis/mulai_prediksi', $data);
         $this->load->view('data/footer');
     }
-    public function proses_tambah_data_stroke()
+    public function proses_tambah_data_prediksitm()
     {
-        $this->data_stroke_model->proses_tambah_data_stroke();
+        $this->prediksi_pengunjung_model->proses_tambah_data_prediksitm();
         $this->session->set_flashdata(
             'message',
             '<div class="alert alert-success" role="alert">
-            Data Stroke Berhasil Ditambahkan! </div>'
+            Data Prediksi Masyarakat Berhasil Ditambahkan! </div>'
         );
-        redirect('data/index');
+        redirect('prediksi_tim_medis/tampildata');
     }
-    public function hapus_data_stroke($id_data_stroke)
+    public function hapus_data_prediksim($id_prediksi)
     {
-        $this->data_stroke_model->hapus_data_stroke($id_data_stroke);
+        $this->prediksi_pengunjung_model->hapus_data_prediksitm($id_prediksi);
         $this->session->set_flashdata(
             'message',
             '<div class="alert alert-primary" role="alert">
-            Data Stroke Berhasil Dihapus! </div>'
+            Data Prediksi Masyarakat Berhasil Dihapus! </div>'
         );
-        redirect('data/index');
+        redirect('prediksi_tim_medis/tampildata');
     }
-    public function edit_data_stroke($id_data_stroke)
+    public function edit_data_prediksim($id_prediksi_tim_medis)
     {
         $data['title'] = 'Edit Data Stroke';
         $data['user'] = $this->db->get_where('user', ['email'
         => $this->session->userdata('email')])->row_array();
 
-        $data['data_stroke'] = $this->data_stroke_model->ambil_id_data_stroke($id_data_stroke);
+        $data['prediksi_tim_medis'] = $this->prediksi_pengunjung_model->ambil_id_data_prediksitm($id_prediksi_tim_medis);
         $this->load->view('data/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('data/edit_data_stroke', $data);
+        $this->load->view('tim_medis/edit_data_stroke', $data);
         $this->load->view('data/footer');
     }
-    public function proses_edit_data_stroke()
+    public function proses_edit_data_prediksim()
     {
-        $this->data_stroke_model->proses_edit_data_stroke();
+        $this->prediksi_pengunjung_model->proses_edit_data_prediksim();
         $this->session->set_flashdata(
             'message',
             '<div class="alert alert-primary" role="alert">
-            Data Stroke Berhasil Diedit! </div>'
+            Data Prediksi Masyarakat Berhasil Diedit! </div>'
         );
-        redirect('data/index');
+        redirect('predik_masyarakat/tampildata');
     }
-    // public function hasilprediksi()
-    // {
-    //     $this->load->view('tim_medis/prediksi_tim_medis');
-    // }
-    public function prediksi_untuk_tim_medis()
+    public function hasilprediksi()
+    {
+        $this->load->view('prediksi_masyarakat/hasil_predik_masyarakat');
+    }
+    public function prediksi_pengunjung()
     {
         $this->load->model('data_stroke_model');
         $data_stroke = $this->data_stroke_model->SemuaData();
@@ -116,8 +115,8 @@ class Prediksi_tim_medis extends CI_Controller
         $result = $this->result_knn(3, $tempResult);
 
         $data["result"] = $result;
-        $this->load->model('prediksi_tim_medis_model');
-        $prediksi_tim_medis = array(
+        $this->load->model('prediksi_pengunjung_model');
+        $prediksi = array(
             'jenis_kelamin_pengunjung' => $jenis_kelamin_pengunjung,
             'usia_pengunjung' => $usia_pengunjung,
             'hipertensi_pengunjung' => $hipertensi_pengunjung,
@@ -130,7 +129,7 @@ class Prediksi_tim_medis extends CI_Controller
             'status_perokok_pengunjung' => $status_perokok_pengunjung,
             'keterangan_pengunjung' => $result->keterangan
         );
-        $this->prediksi_tim_medis_model->tambah_prediksi_pengunjung($prediksi_tim_medis);
+        $this->prediksi_pengunjung_model->tambah_prediksi_pengunjung($prediksi);
         $this->load->view('prediksi_masyarakat/hasil_predik_masyarakat', $data);
     }
     public function result_knn($k, $data)

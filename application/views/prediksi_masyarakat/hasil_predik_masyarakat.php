@@ -68,14 +68,14 @@
         <!--% if $keterangan_pengunjung == 'stroke' %}-->
         <?php if ((bool)$result->keterangan) { ?>
             <div class="alert alert-danger">
-                <h1>Anda Terkena Stroke!</h1>
+                <h1>Anda Berpotensi Terkena Stroke!</h1>
                 <hr class="my-1">
                 <p>Segera periksa dan konsultasikan ke dokter!</p>
             </div>
         <?php } else { ?>
             <!--{% else %}-->
             <div class="alert alert-success">
-                <h1>Anda Tidak Terkena Stroke</h1>
+                <h1>Anda Tidak Berpotensi Terkena Stroke</h1>
                 <hr class="my-1">
                 <p>Tetaplah waspada dan jaga kesehatan Anda!</p>
             </div>

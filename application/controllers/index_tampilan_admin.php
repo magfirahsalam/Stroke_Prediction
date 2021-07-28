@@ -5,7 +5,7 @@ class Index_Tampilan_Admin extends CI_Controller
 {
     public function index()
     {
-        $data['title'] = 'Landing Page';
+        $data['title'] = 'Dashboard Admin';
         $data['user'] = $this->db->get_where('user', ['email'
         => $this->session->userdata('email')])->row_array();
 

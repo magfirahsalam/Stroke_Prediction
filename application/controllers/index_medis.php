@@ -3,8 +3,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Index_medis extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        // $this->load->database();
+        $this->load->model('grafik_model_tm');
+    }
     public function index()
     {
+        $data['grafikdataprediksi'] = $this->grafik_model_tm->grafikdataprediksi();
         $data['title'] = 'Landing Page';
         $data['user'] = $this->db->get_where('user', ['email'
         => $this->session->userdata('email')])->row_array();
@@ -15,6 +22,19 @@ class Index_medis extends CI_Controller
         $this->load->view('tim_medis/index_medis', $data);
         $this->load->view('tim_medis/footer');
     }
+    // public function grafikdataprediksi()
+    // {
+
+    //     $data['title'] = 'Landing Page';
+    //     $data['user'] = $this->db->get_where('user', ['email'
+    //     => $this->session->userdata('email')])->row_array();
+
+    //     $this->load->view('tim_medis/header', $data);
+    //     $this->load->view('tim_medis/sidebar', $data);
+    //     $this->load->view('tim_medis/topbar', $data);
+    //     $this->load->view('tim_medis/index_medis', $data);
+    //     $this->load->view('tim_medis/footer');
+    // }
     public function myprofile()
     {
         $data['title'] = 'My Profile';

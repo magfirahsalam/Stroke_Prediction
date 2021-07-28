@@ -123,7 +123,24 @@
                         </div>
                         <div class="form-group">
                             <label for="Usia" class="col-form-label">Usia:</label>
-                            <input type="usia" class="form-control" id="usia" name="usia" placeholder="Usia">
+                            <input type="usia" class="form-control" id="usia" name="usia" placeholder="Masukkan Usia Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tinggi_badan" class="col-form-label">Tinggi Badan:</label>
+                            <input onchange="hitungbmi()" type="tinggi_badan" class="form-control" id="tinggi_badan" name="tinggi_badan" placeholder="Masukkan Tinggi Badan Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="berat_badan" class="col-form-label">Berat Badan:</label>
+                            <input onchange="hitungbmi()" type="berat_badan" class="form-control" id="berat_badan" name="berat_badan" placeholder="Masukkan Berat Badan Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Index Berat Badan" class="col-form-label">Index Berat Badan:</label>
+                            <select class="form-control" name="index_berat_badan" id="index_berat_badan" aria-label="readonly input example" readonly>
+                                <option selected>Anda Tidak Perlu Klik, Sudah Terisi Otomatis</option>
+                                <option value="0">Index Berat Badan < 18 </option>
+                                <option value="1">Index Berat Badan antara 18 sampai 25</option>
+                                <option value="2">Index Berat Badan > 25</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="Hipertensi" class="col-form-label">Tekanan Darah Anda Tinggi?</label>
@@ -132,6 +149,8 @@
                                 <option value="1">Tidak</option>
                             </select>
                         </div>
+                    </div>
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="Liver" class="col-form-label">Riwayat Liver?</label>
                             <select class="form-control" name="liver">
@@ -146,8 +165,6 @@
                                 <option value="1">Belum Menikah</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="Tipe Pekerjaan" class="col-form-label">Tipe Pekerjaan:</label>
                             <select class="form-control" name="tipe_pekerjaan">
@@ -170,14 +187,6 @@
                                 <option value="0">Glukosa < 130 </option>
                                 <option value="1">Glukosa antara 130 sampai 200</option>
                                 <option value="2">Glukosa > 200</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="Index Berat Badan" class="col-form-label">Index Berat Badan:</label>
-                            <select class="form-control" name="index_berat_badan">
-                                <option value="0">Index Berat Badan < 18 </option>
-                                <option value="1">Index Berat Badan antara 18 sampai 25</option>
-                                <option value="2">Index Berat Badan > 25</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -215,6 +224,27 @@
 <script src="<?= base_url() ?>assets/care/js/owl.carousel.min.js"></script>
 <script src="<?= base_url() ?>assets/care/js/custom.js"></script>
 
+<script>
+    function hitungbmi() {
+        let tinggi_badan = $("#tinggi_badan").val()
+        let berat_badan = $("#berat_badan").val()
+        //let index_berat_badan = $("#index_berat_badan").val()
+        let penyebut = parseFloat((tinggi_badan / 100) * (tinggi_badan / 100))
+        let bmi = parseFloat(berat_badan / penyebut)
+        let index_berat_badan = 2
+        if (bmi > 0 && bmi <= 18) {
+            index_berat_badan = 0;
+        } else if (bmi > 18 && bmi <= 25) {
+            index_berat_badan = 1;
+        }
+        // } else {
+        //     index_berat_badan = 2;
+        // }
+        // alert(index_berat_badan)
+        $("#index_berat_badan").val(index_berat_badan)
+
+    }
+</script>
 
 </body>
 

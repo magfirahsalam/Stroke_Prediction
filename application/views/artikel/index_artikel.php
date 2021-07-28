@@ -4,7 +4,7 @@
     <?= $this->session->flashdata('message'); ?>
     <div class="card shadow mb-4">
         <div class="card-header py-4">
-            <div class="m-0 font-weight-bold text-primary">Halaman Artikel
+            <div class="m-0 font-weight-bold text-secondary">Halaman Artikel
 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-secondary btn-sm float-right" data-toggle="modal" data-target="#exampleModal">
@@ -35,7 +35,7 @@
                                     <td><?php echo $art['Penulis']; ?></td>
                                     <td><img src="<?php echo base_url() . 'vendor/sbadmin2/img/artikel/' . $art['Gambar'] ?>" width="100"></td>
                                     <td class="text-center" width="160px">
-                                        <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#editmodal<?php echo $art['Judul']; ?>">
+                                        <button type="button" class="badge badge-secondary" data-toggle="modal" data-target="#editmodal<?php echo $art['Judul']; ?>">
                                             Edit
                                         </button>
                                         <a href="<?= base_url() ?>Index_artikel/hapus_artikel/<?php echo $art['id_artikel']; ?>" class="badge badge-danger" onclick="javascript: return confirm('Anda yakin hapus?')">Hapus</a>

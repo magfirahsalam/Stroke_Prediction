@@ -31,7 +31,7 @@ class Data_tim_medis extends CI_Controller
     }
     public function proses_tambah_data_tim_medis()
     {
-        $this->data_testing_stroke_model->proses_tambah_data_tim_medis();
+        $this->data_tim_medis_model->proses_tambah_data_tim_medis();
         $this->session->set_flashdata(
             'message',
             '<div class="alert alert-success" role="alert">

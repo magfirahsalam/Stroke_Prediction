@@ -70,7 +70,7 @@
                                              <td><?php echo $pdktm['rata_kadar_glukosa_tm']; ?></td>
                                              <td><?php echo $pdktm['index_bb_tm']; ?></td>
                                              <td><?php echo $pdktm['status_perokok_tm']; ?></td>
-                                             <td><?php echo $pdktm['hasil_prediksi_tm']; ?></td>
+                                             <td><?php echo $pdktm['keterangan_tm']; ?></td>
                                              <td><?php echo $pdktm['dibuat_pada']; ?></td>
                                              <td>
                                                  <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#editmodal<?php echo $pdk['id_prediksi']; ?>">
@@ -118,7 +118,7 @@
                                                                  </div>
                                                                  <div class="form-group">
                                                                      <label for="Hipertensi" class="col-form-label">Tekanan Darah Anda Tinggi?</label>
-                                                                     <select class="form-control" name="hipertensi_tm
+                                                                     <select class="form-control" name="hipertensi_tm">
                                                                          <option value=" 1">Tidak</option>
                                                                      </select>
                                                                  </div>
@@ -131,7 +131,7 @@
                                                                  </div>
                                                                  <div class="form-group">
                                                                      <label for="Status Pernikahan" class="col-form-label">Status Menikah:</label>
-                                                                     <select class="form-control" name="status_pernikahan_tm
+                                                                     <select class="form-control" name="status_pernikahan_tm">
                                                                          <option value=" 1">Belum Menikah</option>
                                                                      </select>
                                                                  </div>
@@ -212,7 +212,7 @@
 
                                                                      <!-- <div class="form-group">
                                      <label for="Id Pasien" class="col-form-label">Id Pasien:</label>
-                                     <input type="text" class="form-control" name="id_prediksi" class="form-control" id="id_prediksi" value="<?php echo $pdk['id_prediksi']; ?>">
+                                     <input type="text" class="form-control" name="id_prediksi" class="form-control" id="id_prediksi" value="</?php echo $pdk['id_prediksi']; ?>">
                                  </div> -->
                                                                      <div class="form-group">
                                                                          <label for="Jenis Kelamin" class="col-form-label">Jenis Kelamin:</label>
@@ -223,7 +223,7 @@
                                                                      </div>
                                                                      <div class="form-group">
                                                                          <label for="Usia" class="col-form-label">Usia:</label>
-                                                                         <select class="form-control" name="usia" value="<?php echo $pdk['usia_pengunjung']; ?>">
+                                                                         <select class="form-control" name="usia" input type="number" value="<?php echo $pdk['usia_pengunjung']; ?>">
                                                                              <option value="0">Usia Di Bawah 30 Tahun</option>
                                                                              <option value="1">Usia antara 31 s/d 60</option>
                                                                              <option value="2">Usia Di Atas 60</option>
@@ -274,6 +274,7 @@
                                                                              <option value="2">Glukosa > 200</option>
                                                                          </select>
                                                                      </div>
+
                                                                      <div class="form-group">
                                                                          <label for="Index Berat Badan" class="col-form-label">Index Berat Badan:</label>
                                                                          <select class="form-control" name="index_berat_badan" value="<?php echo $pdk['index_bb_pengunjung']; ?>">

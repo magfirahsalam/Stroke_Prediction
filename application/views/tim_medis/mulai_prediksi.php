@@ -2,9 +2,13 @@
     <h3> <?= $title; ?></h3>
     <hr>
     <br>
-    <form method="post" action="<?= base_url('prediksi_tim_medis/prediksitm'); ?>">
+    <form method="post" action="<?= base_url('prediksi_tim_medis/prediksi_tm'); ?>">
         <div class="row">
             <div class="col-md-6">
+                <div class="form-group">
+                    <label for="id_pasien_tm" class="col-form-label">ID Pasien:</label>
+                    <input type="usia" class="form-control" id="id_pasien_tm" name="id_pasien_tm" placeholder="ID Pasien">
+                </div>
                 <div class="form-group">
                     <label for="Jenis Kelamin" class="col-form-label">Jenis Kelamin:</label>
                     <select class="form-control" name="jenis_kelamin">
@@ -62,6 +66,14 @@
                         <option value="1">Glukosa antara 130 sampai 200</option>
                         <option value="2">Glukosa > 200</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="tinggi_badan" class="col-form-label">Tinggi Badan:</label>
+                    <input onchange="hitungbmi()" type="tinggi_badan" class="form-control" id="tinggi_badan" name="tinggi_badan" placeholder="Masukkan Tinggi Badan Anda" required>
+                </div>
+                <div class="form-group">
+                    <label for="berat_badan" class="col-form-label">Berat Badan:</label>
+                    <input onchange="hitungbmi()" type="berat_badan" class="form-control" id="berat_badan" name="berat_badan" placeholder="Masukkan Berat Badan Anda" required>
                 </div>
                 <div class="form-group">
                     <label for="Index Berat Badan" class="col-form-label">Index Berat Badan:</label>

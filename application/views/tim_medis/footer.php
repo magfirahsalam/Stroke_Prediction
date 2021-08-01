@@ -8,15 +8,15 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Yakin Ingin Keluar?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-body">Tekan tombol "Keluar" di bawah ini apabila Anda ingin Keluar.</div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="<?= base_url('login/logout'); ?>">Logout</a>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                <a class="btn btn-secondary" href="<?= base_url('login/logout'); ?>">Keluar</a>
             </div>
         </div>
     </div>
@@ -181,6 +181,27 @@
             cutoutPercentage: 80,
         },
     });
+</script>
+<script>
+    function hitungbmi() {
+        let tinggi_badan = $("#tinggi_badan").val()
+        let berat_badan = $("#berat_badan").val()
+        //let index_berat_badan = $("#index_berat_badan").val()
+        let penyebut = parseFloat((tinggi_badan / 100) * (tinggi_badan / 100))
+        let bmi = parseFloat(berat_badan / penyebut)
+        let index_berat_badan = 2
+        if (bmi > 0 && bmi <= 18) {
+            index_berat_badan = 0;
+        } else if (bmi > 18 && bmi <= 25) {
+            index_berat_badan = 1;
+        }
+        // } else {
+        //     index_berat_badan = 2;
+        // }
+        // alert(index_berat_badan)
+        // $("#index_berat_badan").val(index_berat_badan)
+
+    }
 </script>
 </body>
 

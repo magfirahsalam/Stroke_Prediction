@@ -62,9 +62,9 @@ class Prediksi_tim_medis extends CI_Controller
         $this->load->view('tim_medis/edit_data_stroke', $data);
         $this->load->view('data/footer');
     }
-    public function proses_edit_data_prediksim()
+    public function proses_edit_data_prediksitm()
     {
-        $this->prediksi_pengunjung_model->proses_edit_data_prediksim();
+        $this->prediksi_pengunjung_model->proses_edit_data_prediksitm();
         $this->session->set_flashdata(
             'message',
             '<div class="alert alert-primary" role="alert">
@@ -74,39 +74,41 @@ class Prediksi_tim_medis extends CI_Controller
     }
     public function hasilprediksi()
     {
-        $this->load->view('prediksi_masyarakat/hasil_predik_masyarakat');
+        $this->load->view('tim_medis/result');
     }
-    public function prediksi_pengunjung()
+    public function prediksi_tm()
     {
         $this->load->model('data_stroke_model');
         $data_stroke = $this->data_stroke_model->SemuaData();
 
         date_default_timezone_set('Asia/Jakarta');
-
-        $jenis_kelamin_pengunjung = $this->input->post('jenis_kelamin');
-        $usia_pengunjung = $this->input->post('usia');
-        $hipertensi_pengunjung = $this->input->post('hipertensi');
-        $liver_pengunjung = $this->input->post('liver');
-        $status_pernikahan_pengunjung = $this->input->post('status_pernikahan');
-        $tipe_pekerjaan_pengunjung = $this->input->post('tipe_pekerjaan');
-        $tempat_tinggal_pengunjung = $this->input->post('tempat_tinggal');
-        $rata_kadar_glukosa_pengunjung = $this->input->post('rata_kadar_glukosa');
-        $index_bb_pengunjung = $this->input->post('index_berat_badan');
-        $status_perokok_pengunjung = $this->input->post('status_perokok');
+        $id_pasien_tm = $this->input->post('id_pasien_tm');
+        $jenis_kelamin_tm = $this->input->post('jenis_kelamin');
+        $usia_tm = $this->input->post('usia');
+        $hipertensi_tm = $this->input->post('hipertensi');
+        $liver_tm = $this->input->post('liver');
+        $status_pernikahan_tm = $this->input->post('status_pernikahan');
+        $tipe_pekerjaan_tm = $this->input->post('tipe_pekerjaan');
+        $tempat_tinggal_tm = $this->input->post('tempat_tinggal');
+        $rata_kadar_glukosa_tm = $this->input->post('rata_kadar_glukosa');
+        $tinggi_badan_tm = $this->input->post('tinggi_badan');
+        $berat_badan_tm = $this->input->post('berat_badan');
+        $index_bb_tm = $this->input->post('index_berat_badan');
+        $status_perokok_tm = $this->input->post('status_perokok');
 
 
         $tempResult = [];
         foreach ($data_stroke as $value) {
-            $result = sqrt(pow(($value->jenis_kelamin - $jenis_kelamin_pengunjung), 2)
-                + pow(($value->usia - $usia_pengunjung), 2)
-                + pow(($value->hipertensi - $hipertensi_pengunjung), 2)
-                + pow(($value->liver - $liver_pengunjung), 2)
-                + pow(($value->status_pernikahan - $status_pernikahan_pengunjung), 2)
-                + pow(($value->tipe_pekerjaan - $tipe_pekerjaan_pengunjung), 2)
-                + pow(($value->tempat_tinggal - $tempat_tinggal_pengunjung), 2)
-                + pow(($value->rata_kadar_glukosa - $rata_kadar_glukosa_pengunjung), 2)
-                + pow(($value->index_berat_badan - $index_bb_pengunjung), 2)
-                + pow(($value->status_perokok - $status_perokok_pengunjung), 2));
+            $result = sqrt(pow(($value->jenis_kelamin - $jenis_kelamin_tm), 2)
+                + pow(($value->usia - $usia_tm), 2)
+                + pow(($value->hipertensi - $hipertensi_tm), 2)
+                + pow(($value->liver - $liver_tm), 2)
+                + pow(($value->status_pernikahan - $status_pernikahan_tm), 2)
+                + pow(($value->tipe_pekerjaan - $tipe_pekerjaan_tm), 2)
+                + pow(($value->tempat_tinggal - $tempat_tinggal_tm), 2)
+                + pow(($value->rata_kadar_glukosa - $rata_kadar_glukosa_tm), 2)
+                + pow(($value->index_berat_badan - $index_bb_tm), 2)
+                + pow(($value->status_perokok - $status_perokok_tm), 2));
             array_push($tempResult, (object)["result" => $result, "keterangan" => $value->keterangan]);
         }
         usort($tempResult, function ($a, $b) {
@@ -115,22 +117,34 @@ class Prediksi_tim_medis extends CI_Controller
         $result = $this->result_knn(3, $tempResult);
 
         $data["result"] = $result;
-        $this->load->model('prediksi_pengunjung_model');
+        $this->load->model('prediksi_tim_medis_model');
         $prediksi = array(
-            'jenis_kelamin_pengunjung' => $jenis_kelamin_pengunjung,
-            'usia_pengunjung' => $usia_pengunjung,
-            'hipertensi_pengunjung' => $hipertensi_pengunjung,
-            'liver_pengunjung' => $liver_pengunjung,
-            'status_pernikahan_pengunjung' => $status_pernikahan_pengunjung,
-            'tipe_pekerjaan_pengunjung' => $tipe_pekerjaan_pengunjung,
-            'tempat_tinggal_pengunjung' => $tempat_tinggal_pengunjung,
-            'rata_kadar_glukosa_pengunjung' => $rata_kadar_glukosa_pengunjung,
-            'index_bb_pengunjung' => $index_bb_pengunjung,
-            'status_perokok_pengunjung' => $status_perokok_pengunjung,
-            'keterangan_pengunjung' => $result->keterangan
+            'id_pasien_tm' => $id_pasien_tm,
+            'jenis_kelamin_tm' => $jenis_kelamin_tm,
+            'usia_tm' => $usia_tm,
+            'hipertensi_tm' => $hipertensi_tm,
+            'liver_tm' => $liver_tm,
+            'status_pernikahan_tm' => $status_pernikahan_tm,
+            'tipe_pekerjaan_tm' => $tipe_pekerjaan_tm,
+            'tempat_tinggal_tm' => $tempat_tinggal_tm,
+            'rata_kadar_glukosa_tm' => $rata_kadar_glukosa_tm,
+            "tinggi_badan_tm" => $tinggi_badan_tm,
+            "berat_badan_tm" => $berat_badan_tm,
+            'index_bb_tm' => $index_bb_tm,
+            'status_perokok_tm' => $status_perokok_tm,
+            'keterangan_tm' => $result->keterangan,
+            'dibuat_pada' => date('Y-m-d')
         );
-        $this->prediksi_pengunjung_model->tambah_prediksi_pengunjung($prediksi);
-        $this->load->view('prediksi_masyarakat/hasil_predik_masyarakat', $data);
+        $this->prediksi_tim_medis_model->tambah_prediksi_tm($prediksi);
+        $data['title'] = 'Data Prediksi Tim Medis';
+        $data['user'] = $this->db->get_where('user', ['email'
+        => $this->session->userdata('email')])->row_array();
+
+        $this->load->view('data/header', $data);
+        $this->load->view('tim_medis/sidebar', $data);
+        $this->load->view('tim_medis/topbar', $data);
+        $this->load->view('tim_medis/result', $data);
+        $this->load->view('data/footer');
     }
     public function result_knn($k, $data)
     {

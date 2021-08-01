@@ -22,7 +22,7 @@ class Prediksi_tim_medis_model extends CI_Model
     public function proses_tambah_data_prediksitm()
     {
         $data = [
-            "id_pasien_tm" => $this->input->post('jid_pasien_tm'),
+            "id_pasien_tm" => $this->input->post('id_pasien_tm'),
             "jenis_kelamin_tm" => $this->input->post('jenis_kelamin_tm'),
             "usia_tm" => $this->input->post('usia_tm'),
             "hipertensi_tm" => $this->input->post('hipertensi_tm'),
@@ -35,7 +35,6 @@ class Prediksi_tim_medis_model extends CI_Model
             "tinggi_badan_tm" => $this->input->post('tinggi_badan_tm'),
             "index_bb_tm" => $this->input->post('index_bb_tm'),
             "status_perokok_tm" => $this->input->post('status_perokok_tm'),
-            "keterangan_tm" => $this->input->post('keterangan_tm'),
             "keterangan_tm" => $this->input->post('keterangan_tm'),
             'dibuat_pada' => date('Y-m-d')
         ];

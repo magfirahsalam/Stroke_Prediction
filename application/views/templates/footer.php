@@ -54,18 +54,22 @@
     // echo "var label = [$label];\n ";
     // echo "var data = [$data];\n ";
     // ?/>
+    <?php
+    $label = "";
+    foreach ($grafikdataprediksi["label"] as $l) {
+        $label .= "'" . $l . "',";
+    }
+    $data = "";
+    foreach ($grafikdataprediksi["data"] as $d) {
+        $data .= $d . ",";
+    }
 
+    ?>
     var ctx = document.getElementById("myAreaChart");
     var myAreaChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: [<?php
-                        if (count($graph) > 0) {
-                            foreach ($graph as $data) {
-                                echo "'" . $data->provinsi . "',";
-                            }
-                        };
-                        ?>],
+            labels: [<?= $label ?>],
             datasets: [{
                 label: "Prediksi",
                 lineTension: 0.3,
@@ -79,9 +83,7 @@
                 pointHoverBorderColor: "rgba(78, 115, 223, 1)",
                 pointHitRadius: 10,
                 pointBorderWidth: 2,
-                data: [<?php echo $this->db->query("select keterangan_pengunjung from prediksi where keterangan_pengunjung='1'")->num_rows(); ?>,
-                    <?php echo $this->db->query("select keterangan_pengunjung from prediksi where keterangan_pengunjung='0'")->num_rows(); ?>
-                ],
+                data: [<?= $data ?>],
             }],
         },
         options: {
@@ -96,9 +98,7 @@
             },
             scales: {
                 xAxes: [{
-                    time: {
-                        unit: 'date'
-                    },
+
                     gridLines: {
                         display: false,
                         drawBorder: false

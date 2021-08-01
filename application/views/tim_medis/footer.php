@@ -39,7 +39,7 @@
 <script src="<?= base_url(); ?>vendor/sbadmin2/js/demo/chart-bar-demo.js"></script>
 <script src="<?= base_url(); ?>vendor/sbadmin2/js/demo/datatables-demo.js"></script>
 
-<?php $dibuat_pada = $this->db->get('prediksi')->result(); ?>
+<?php $dibuat_pada = $this->db->get('prediksi_tim_medis')->result(); ?>
 <script type="text/javascript">
     // </?php
 
@@ -56,11 +56,11 @@
     // ?/>
     <?php
     $label = "";
-    foreach ($grafikdataprediksi["label"] as $l) {
+    foreach ($grafikdataprediksitm["label"] as $l) {
         $label .= "'" . $l . "',";
     }
     $data = "";
-    foreach ($grafikdataprediksi["data"] as $d) {
+    foreach ($grafikdataprediksitm["data"] as $d) {
         $data .= $d . ",";
     }
 

@@ -3,17 +3,24 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Index_Tampilan_Admin extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        // $this->load->database();
+        $this->load->model('grafik_model_admin');
+    }
     public function index()
     {
-        $data['title'] = 'Dashboard Admin';
+        $data['grafikdataprediksi'] = $this->grafik_model_admin->grafikdataprediksi();
+        $data['title'] = 'Landing Page';
         $data['user'] = $this->db->get_where('user', ['email'
         => $this->session->userdata('email')])->row_array();
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('admin/index_tampilan_admin', $data);
-        $this->load->view('templates/footer',);
+        $this->load->view('tim_medis/header', $data);
+        $this->load->view('tim_medis/sidebar', $data);
+        $this->load->view('tim_medis/topbar', $data);
+        $this->load->view('tim_medis/index_medis', $data);
+        $this->load->view('tim_medis/footer');
     }
     public function myprofile()
     {

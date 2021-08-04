@@ -112,12 +112,12 @@
                         <img src="<?php echo base_url() . 'vendor/sbadmin2/img/artikel/' . $ds['Gambar'] ?>" width="200">
                      </a>
                      <div class="news-info">
-                        <h3>Judul : <a href="<?= base_url() ?>Index_artikel/detail_artikel/<?php echo $ds['id_artikel'] ?>"><?php echo $ds['Judul']; ?></a></h3>
-                        <p>Isi : <?php echo $ds['Isi']; ?></p>
+                        <h3><a href="<?= base_url() ?>Index_artikel/detail_artikel/<?php echo $ds['id_artikel'] ?>"><?php echo $ds['Judul']; ?></a></h3>
+                        <p><?php echo $ds['Isi']; ?></p>
                         <div class=" author">
                            <img src="https://www.pngitem.com/pimgs/m/24-248235_user-profile-avatar-login-account-fa-user-circle.png" class="img-responsive" alt="">
                            <div class="author-info">
-                              <h5>Author : <?php echo $ds['Penulis']; ?></h5>
+                              <h5><?php echo $ds['Penulis']; ?></h5>
                            </div>
                         </div>
                      </div>

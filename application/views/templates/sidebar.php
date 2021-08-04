@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon ">
             <bu class="fas fa-user"></bu>
         </div>
-        <div class="sidebar-brand-text mx-3">Welcome to this page</div>
+        <div class="sidebar-brand-text mx-3">Prediksi Stroke</div>
     </a>
 
     <!-- Divider -->
@@ -25,19 +25,19 @@
     <hr class="sidebar-divider">
     <!-- Heading -->
     <div class="sidebar-heading">
-        User
+        Pengguna
     </div>
 
     <!-- Nav Item -->
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('index_tampilan_admin/myprofile'); ?>">
             <i class="fas fa-fw fa-user"></i>
-            <span>User Profile</span></a>
+            <span>Profil Saya</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url(); ?>index_tampilan_admin/editprofile">
             <i class="fas fa-fw fa-user"></i>
-            <span>Edit Profile</span></a>
+            <span>Edit Profil</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
@@ -67,7 +67,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('login/logout'); ?>">
             <i class="fas fa-fw fa-sign-out-alt"></i>
-            <span>Logout</span></a>
+            <span>Keluar</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

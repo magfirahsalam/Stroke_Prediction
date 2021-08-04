@@ -89,16 +89,16 @@
                             <p><?php echo $artikel['Penulis']; ?></p>
                         </div>
 
-                        <div class="recent-post">
+                        <!-- <div class="recent-post">
                             <h4>Recent Posts</h4>
-
                             <div class="media">
-                                <div class="media-object pull-left">
-                                    <a href="#"><img src="images/news-image.jpg" class="img-responsive" alt=""></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">Introducing a new healing process</a></h4>
-                                </div>
+                                </?php foreach ($artikel as $ds) : ?>
+                                    <div class="media-object pull-left">
+                                        <a href="</?= base_url() ?>Index_artikel/detail_artikel/</?php echo $ds['id_artikel']; ?>"><img src="</?php echo base_url() . 'vendor/sbadmin2/img/artikel/' . $ds['Gambar']; ?>"></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading"><a href="#">Introducing a new healing process</a></h4>
+                                    </div>
                             </div>
 
                             <div class="media">
@@ -109,7 +109,7 @@
                                     <h4 class="media-heading"><a href="#">About Amazing Technology</a></h4>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <!-- </?php endforeach; ?> -->

@@ -11,8 +11,8 @@ class Index_medis extends CI_Controller
     }
     public function index()
     {
-        $data['grafikdataprediksi'] = $this->grafik_model_tm->grafikdataprediksitm();
-        $data['title'] = 'Landing Page';
+        $data['grafikdataprediksitm'] = $this->grafik_model_tm->grafikdataprediksitm();
+        $data['title'] = 'Grafik Hasil Prediksi Tim Medis';
         $data['user'] = $this->db->get_where('user', ['email'
         => $this->session->userdata('email')])->row_array();
 

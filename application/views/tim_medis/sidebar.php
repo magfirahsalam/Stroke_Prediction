@@ -14,14 +14,14 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        User
+        Pengguna
     </div>
 
     <!-- Nav Item -->
     <li class="nav-item">
         <a class="nav-link" href="myprofile">
             <i class="fas fa-fw fa-user"></i>
-            <span>Profil Pengguna</span></a>
+            <span>Profil Saya</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="editprofile">

@@ -26,7 +26,9 @@
 
 <!-- Core plugin JavaScript-->
 <script src="<?= base_url(); ?>vendor/sbadmin2/vendor/jquery-easing/jquery.easing.min.js"></script>
-
+<script src="<?= base_url(); ?>vendor/sbadmin2/vendor/jquery/jquery.js"></script>
+<script src="<?= base_url(); ?>vendor/sbadmin2/vendor/jquery/jquery.slim.js"></script>
+<script src="<?= base_url(); ?>vendor/sbadmin2/vendor/jquery/jquery.slim.min.js"></script>
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url(); ?>vendor/sbadmin2/js/sb-admin-2.min.js"></script>
 
@@ -38,7 +40,26 @@
 <script src="<?= base_url(); ?>vendor/sbadmin2/js/demo/chart-pie-demo.js"></script>
 <script src="<?= base_url(); ?>vendor/sbadmin2/js/demo/chart-bar-demo.js"></script>
 <script src="<?= base_url(); ?>vendor/sbadmin2/js/demo/datatables-demo.js"></script>
-
+<script>
+    function hitungbmi() {
+        let tinggi_badan_tm = $("#tinggi_badan_tm").val()
+        let berat_badan_tm = $("#berat_badan_tm").val()
+        //let index_berat_badan = $("#index_berat_badan").val()
+        let penyebut = parseFloat((tinggi_badan_tm / 100) * (tinggi_badan_tm / 100))
+        let bmi = parseFloat(berat_badan_tm / penyebut)
+        let index_bb_tm = 2
+        if (bmi > 0 && bmi <= 18) {
+            index_bb_tm = 0;
+        } else if (bmi > 18 && bmi <= 25) {
+            index_bb_tm = 1;
+        }
+        // } else {
+        //     index_berat_badan = 2;
+        // }
+        // alert(index_bb_tm)
+        $("#index_bb_tm").val(index_bb_tm)
+    }
+</script>
 <?php $dibuat_pada = $this->db->get('prediksi_tim_medis')->result(); ?>
 <script type="text/javascript">
     // </?php
@@ -157,7 +178,7 @@
         data: {
             labels: ["Stroke", "Tidak Stroke"],
             datasets: [{
-                data: [<?php echo $this->db->query("select keterangan_pengunjung from prediksi where keterangan_pengunjung='1'")->num_rows(); ?>, <?php echo $this->db->query("select keterangan_pengunjung from prediksi where keterangan_pengunjung='0'")->num_rows(); ?>],
+                data: [<?php echo $this->db->query("select keterangan_tm from prediksi_tim_medis where keterangan_tm='1'")->num_rows(); ?>, <?php echo $this->db->query("select keterangan_tm from prediksi_tim_medis where keterangan_tm='0'")->num_rows(); ?>],
                 backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
                 hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
                 hoverBorderColor: "rgba(234, 236, 244, 1)",
@@ -181,27 +202,6 @@
             cutoutPercentage: 80,
         },
     });
-</script>
-<script>
-    function hitungbmi() {
-        let tinggi_badan = $("#tinggi_badan").val()
-        let berat_badan = $("#berat_badan").val()
-        //let index_berat_badan = $("#index_berat_badan").val()
-        let penyebut = parseFloat((tinggi_badan / 100) * (tinggi_badan / 100))
-        let bmi = parseFloat(berat_badan / penyebut)
-        let index_berat_badan = 2
-        if (bmi > 0 && bmi <= 18) {
-            index_berat_badan = 0;
-        } else if (bmi > 18 && bmi <= 25) {
-            index_berat_badan = 1;
-        }
-        // } else {
-        //     index_berat_badan = 2;
-        // }
-        // alert(index_berat_badan)
-        // $("#index_berat_badan").val(index_berat_badan)
-
-    }
 </script>
 </body>
 

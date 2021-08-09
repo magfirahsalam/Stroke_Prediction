@@ -10,11 +10,11 @@ class Predik_Masyarakat extends CI_Controller
         => $this->session->userdata('email')])->row_array();
 
         $data['prediksi'] = $this->prediksi_pengunjung_model->SemuaData();
-        $this->load->view('data/header', $data);
-        $this->load->view('tim_medis/sidebar', $data);
-        $this->load->view('tim_medis/topbar', $data);
-        $this->load->view('tim_medis/prediksi_masyarakat', $data);
-        $this->load->view('data/footer');
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('admin/hasil_prediksi_masyarakat', $data);
+        $this->load->view('templates/footer');
     }
     public function tambah_data_prediksim()
     {

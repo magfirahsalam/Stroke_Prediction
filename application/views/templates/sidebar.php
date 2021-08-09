@@ -56,9 +56,9 @@
 
     <!-- Nav Item -->
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url() ?>data_tim_medis/index">
+        <a class="nav-link" href="<?= base_url() ?>predik_masyarakat/tampildata">
             <i class="fas fa-fw fa-table"></i>
-            <span>Data Tim Medis</span></a>
+            <span>Data Prediksi</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

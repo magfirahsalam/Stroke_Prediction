@@ -150,6 +150,7 @@ class Prediksi_tim_medis extends CI_Controller
         );
         $this->prediksi_tim_medis_model->tambah_prediksi_tm($prediksi);
         $data['title'] = 'Data Prediksi Tim Medis';
+        $data['temp'] = $prediksi;
         $data['user'] = $this->db->get_where('user', ['email'
         => $this->session->userdata('email')])->row_array();
 

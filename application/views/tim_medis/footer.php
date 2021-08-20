@@ -176,9 +176,9 @@
     var myPieChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ["Stroke", "Tidak Stroke"],
+            labels: ["Stroke Haemoragic", "Stroke Non-Haemoragic"],
             datasets: [{
-                data: [<?php echo $this->db->query("select keterangan_tm from prediksi_tim_medis where keterangan_tm='1'")->num_rows(); ?>, <?php echo $this->db->query("select keterangan_tm from prediksi_tim_medis where keterangan_tm='0'")->num_rows(); ?>],
+                data: [<?php echo $this->db->query("select diagnosa_tm from prediksi_tim_medis where diagnosa_tm='1'")->num_rows(); ?>, <?php echo $this->db->query("select diagnosa_tm from prediksi_tim_medis where diagnosa_tm='0'")->num_rows(); ?>],
                 backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
                 hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
                 hoverBorderColor: "rgba(234, 236, 244, 1)",

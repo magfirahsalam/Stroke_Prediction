@@ -29,7 +29,7 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-secondary">Stroke dan Tidak Stroke</h6>
+                        <h6 class="m-0 font-weight-bold text-secondary">Jenis Stroke</h6>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
@@ -38,10 +38,10 @@
                         </div>
                         <div class="mt-4 text-center small">
                             <span class="mr-2">
-                                <i class="fas fa-circle text-primary"></i>Stroke
+                                <i class="fas fa-circle text-primary"></i>Stroke Non Haemoragic
                             </span>
                             <span class="mr-2">
-                                <i class="fas fa-circle text-success"></i>Tidak Stroke
+                                <i class="fas fa-circle text-success"></i>Stroke Haemoragic
                             </span>
                         </div>
                     </div>

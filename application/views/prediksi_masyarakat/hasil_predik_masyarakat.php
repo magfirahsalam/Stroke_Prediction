@@ -71,13 +71,14 @@
                 <h1>Anda Berpotensi Terkena Stroke!</h1>
                 <hr class="my-1">
                 <p>Segera periksa dan konsultasikan ke dokter!</p>
+                <p>ATUR POLA MAKAN DAN UBAH GAYA HIDUP ANDA</p>
             </div>
         <?php } else { ?>
             <!--{% else %}-->
             <div class="alert alert-success">
                 <h1>Anda Tidak Berpotensi Terkena Stroke</h1>
                 <hr class="my-1">
-                <p>Tetaplah waspada dan jaga kesehatan Anda!</p>
+                <p>Tetaplah waspada dan terus jaga kesehatan Anda!</p>
             </div>
         <?php } ?>
         <!--{% endif %}-->

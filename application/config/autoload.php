@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('artikel_model', 'grafik_model_tm', 'data_stroke_model', 'data_testing_stroke_model', 'data_training_model',  'data_stroke_tim_medis_model', 'prediksi_pengunjung_model', 'prediksi_tim_medis_model', 'data_tim_medis_model', 'importdata_model');
+$autoload['model'] = array('artikel_model', 'grafik_model_tm', 'data_stroke_model', 'data_testing_stroke_model', 'data_training_model',  'data_training_tim_medis_model', 'prediksi_pengunjung_model', 'prediksi_tim_medis_model', 'data_tim_medis_model', 'importdata_model');

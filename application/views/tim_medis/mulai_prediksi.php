@@ -30,91 +30,227 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="id_pasien_tm" class="col-form-label">Id Pasien: </label>
-                        <input type="id_pasien_tm" class="form-control" id="id_pasien_tm" name="id_pasien_tm" placeholder="Masukkan id Pasien Anda" required>
+                        <label for="id_pasien" class="col-form-label">Id Pasien: </label>
+                        <input type="id_pasien" class="form-control" id="id_pasien" name="id_pasien" placeholder="Masukkan Id Pasien" required>
                     </div>
                     <div class="form-group">
-                        <label for="Jenis Kelamin" class="col-form-label">Jenis Kelamin:</label>
-                        <select class="form-control" name="jenis_kelamin_tm">
-                            <option value="0">Laki-Laki</option>
-                            <option value="1">Perempuan</option>
+                        <label for="jenis_kelamin" class="col-form-label">Jenis Kelamin:</label>
+                        <select class="form-control" name="jenis_kelamin">
+                            <option value="1">Laki-Laki</option>
+                            <option value="0">Perempuan</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="Usia" class="col-form-label">Usia:</label>
-                        <input type="usia" class="form-control" id="usia" name="usia_tm" placeholder="Masukkan Usia Anda" required>
+                        <label for="usia" class="col-form-label">Usia:</label>
+                        <input type="usia" class="form-control" id="usia" name="usia" placeholder="Masukkan Usia" required>
                     </div>
                     <div class="form-group">
-                        <label for="tinggi_badan" class="col-form-label">Tinggi Badan:</label>
-                        <input onchange="hitungbmi()" type="tinggi_badan" class="form-control" id="tinggi_badan" name="tinggi_badan_tm" placeholder="Masukkan Tinggi Badan Anda" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="berat_badan" class="col-form-label">Berat Badan:</label>
-                        <input onchange="hitungbmi()" type="berat_badan" class="form-control" id="berat_badan" name="berat_badan_tm" placeholder="Masukkan Berat Badan Anda" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="Index Berat Badan" class="col-form-label">Index Berat Badan:</label>
-                        <select class="form-control" name="index_bb_tm" id="index_berat_badan" aria-label="readonly input example" readonly>
-                            <option selected>Anda Tidak Perlu Klik, Sudah Terisi Otomatis</option>
-                            <option value="0">Index Berat Badan < 18 </option>
-                            <option value="1">Index Berat Badan antara 18 sampai 25</option>
-                            <option value="2">Index Berat Badan > 25</option>
+                        <label for="keadaan_umum" class="col-form-label">Keadaan Umum:</label>
+                        <select class="form-control" name="keadaan_umum">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Sedang</option>
+                            <option value="2">Tidak Sadar</option>
+                            <option value="3">Lemah</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="Hipertensi" class="col-form-label">Tekanan Darah Anda Tinggi?</label>
-                        <select class="form-control" name="hipertensi_tm">
-                            <option value="0">Ya</option>
-                            <option value="1">Tidak</option>
+                        <label for="kesadaran" class="col-form-label">Kesadaran:</label>
+                        <select class="form-control" name="kesadaran">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Samno-Len</option>
+                            <option value="2">Sofor</option>
+                            <option value="3">CM</option>
+                            <option value="4">Apatis</option>
+                            <option value="4">Coma</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tensi_darah" class="col-form-label">Tensi Darah:</label>
+                        <input type="tensi_darah" class="form-control" id="tensi_darah" name="tensi_darah" placeholder="Masukkan Tensi Darah" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nadi_permenit" class="col-form-label">Jumlah Denyut Nadi/menit:</label>
+                        <input type="nadi_permenit" class="form-control" id="nadi_permenit" name="nadi_permenit" placeholder="Masukkan Jumlah Denyut Nadi Permenit" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="suara_napas" class="col-form-label">Suara Napas:</label>
+                        <select class="form-control" name="suara_napas">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Normal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="suhu_badan" class="col-form-label">Suhu Badan:</label>
+                        <input type="suhu_badan" class="form-control" id="suhu_badan" name="suhu_badan" placeholder="Masukkan Suhu Badan" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="respirasi_permenit" class="col-form-label">Jumlah Napas/menit:</label>
+                        <input type="respirasi_permenit" class="form-control" id="respirasi_permenit" name="respirasi_permenit" placeholder="Masukkan Jumlah Napas Permenit" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="spo2" class="col-form-label">SPO2:</label>
+                        <input type="spo2" class="form-control" id="spo2" name="spo2" placeholder="Masukkan SPO2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="perubahan_sensorik" class="col-form-label">Perubahan Sensorik:</label>
+                        <select class="form-control" name="perubahan_sensorik">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Tidak Berubah</option>
+                            <option value="2">Berubah</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="perubahan_motorik" class="col-form-label">Perubahan Motorik:</label>
+                        <select class="form-control" name="perubahan_motorik">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Tidak Berubah</option>
+                            <option value="2">Berubah</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="irama_napas" class="col-form-label">Irama Napas:</label>
+                        <select class="form-control" name="irama_napas">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Tidak Teratur</option>
+                            <option value="2">Teratur</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bunyi_napas" class="col-form-label">Bunyi Napas:</label>
+                        <select class="form-control" name="bunyi_napas">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Vasikuler</option>
+                            <option value="2">Stridor</option>
+                            <option value="2">Wheezing</option>
+                            <option value="2">Rondi</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="Liver" class="col-form-label">Riwayat Liver?</label>
-                        <select class="form-control" name="liver_tm">
-                            <option value="0">Ya</option>
+                        <label for="henti_jantung" class="col-form-label">Henti Jantung:</label>
+                        <select class="form-control" name="henti_jantung">
+                            <option value="0">Tidak Tercantum</option>
                             <option value="1">Tidak</option>
+                            <option value="2">Ya</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="Status Pernikahan" class="col-form-label">Status Menikah:</label>
-                        <select class="form-control" name="status_pernikahan_tm">
-                            <option value="0">Sudah Menikah</option>
-                            <option value="1">Belum Menikah</option>
+                        <label for="nadi_teraba" class="col-form-label">Nadi Teraba:</label>
+                        <select class="form-control" name="nadi_teraba">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Tidak</option>
+                            <option value="2">Ya</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="Tipe Pekerjaan" class="col-form-label">Tipe Pekerjaan:</label>
-                        <select class="form-control" name="tipe_pekerjaan_tm">
-                            <option value="0">Pekerja Swasta</option>
-                            <option value="1">Bisnis</option>
-                            <option value="2">Pemerintahan</option>
-                            <option value="3">Pekerja Anak</option>
+                        <label for="kulit" class="col-form-label">Kondisi Kulit:</label>
+                        <select class="form-control" name="kulit">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Lembab</option>
+                            <option value="2">Kering</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="Tempat Tinggal" class="col-form-label">Tempat Tinggal:</label>
-                        <select class="form-control" name="tempat_tinggal_tm">
-                            <option value="0">Perkotaan</option>
-                            <option value="1">Pedesaan</option>
+                        <label for="akral" class="col-form-label">AKRAL:</label>
+                        <select class="form-control" name="akral">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Dingin</option>
+                            <option value="2">Hangat</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="Rata Kadar Glukosa" class="col-form-label">Kadar Glukosa:</label>
-                        <select class="form-control" name="rata_kadar_glukosa_tm">
-                            <option value="0">Glukosa < 130 </option>
-                            <option value="1">Glukosa antara 130 sampai 200</option>
-                            <option value="2">Glukosa > 200</option>
+                        <label for="pendarahan" class="col-form-label">Pendarahan:</label>
+                        <select class="form-control" name="pendarahan">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Tidak Pendarahan</option>
+                            <option value="2">Ya</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="Status Perokok" class="col-form-label">Status Merokok</label>
-                        <select class="form-control" name="status_perokok_tm">
-                            <option value="0">Pernah</option>
-                            <option value="1">Tidak Pernah</option>
-                            <option value="2">Perokok</option>
+                        <label for="turgor" class="col-form-label">Turgor:</label>
+                        <select class="form-control" name="turgor">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Tidak Normal</option>
+                            <option value="2">Normal</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sianosis" class="col-form-label">Sianosis:</label>
+                        <select class="form-control" name="sianosis">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Tidak</option>
+                            <option value="2">Ya</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="riwayat_alergi" class="col-form-label">Riwayat Alergi:</label>
+                        <select class="form-control" name="riwayat_alergi">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Tidak Ada</option>
+                            <option value="2">Ada</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="medikasi" class="col-form-label">Medikasi:</label>
+                        <select class="form-control" name="medikasi">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Tidak Ada</option>
+                            <option value="2">Ada</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pernah_stroke" class="col-form-label">Riwayat Stroke:</label>
+                        <select class="form-control" name="pernah_stroke">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Tidak Ada</option>
+                            <option value="2">Ada</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="refleks_cahaya" class="col-form-label">Refleks Cahaya:</label>
+                        <select class="form-control" name="refleks_cahaya">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Tidak Ada</option>
+                            <option value="2">Ada</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="skala_nyeri" class="col-form-label">Skala Nyeri:</label>
+                        <select class="form-control" name="skala_nyeri">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Berat</option>
+                            <option value="2">Sedang</option>
+                            <option value="3">Ringan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="aktivitas_mobilisasi" class="col-form-label">Aktivitas Mobilisasi:</label>
+                        <select class="form-control" name="aktivitas_mobilisasi">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Mandiri</option>
+                            <option value="2">Perlu Bantuan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="risiko_jatuh" class="col-form-label">Risiko Jatuh:</label>
+                        <select class="form-control" name="risiko_jatuh">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Tidak Berisiko</option>
+                            <option value="2">Risiko Tinggi</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="crt" class="col-form-label">CRT:</label>
+                        <select class="form-control" name="crt">
+                            <option value="0">Tidak Tercantum</option>
+                            <option value="1">Tidak Berisiko</option>
+                            <option value="2">Risiko Tinggi</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gcs" class="col-form-label">GCS:</label>
+                        <input type="gcs" class="form-control" id="gcs" name="gcs" placeholder="Masukkan GCS" required>
                     </div>
                 </div>
             </div>

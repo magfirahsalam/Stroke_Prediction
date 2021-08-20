@@ -37,9 +37,14 @@
 
     <!-- Nav Item -->
     <li class="nav-item">
+        <a class="nav-link" href="<?= base_url() ?>data_training_tim_medis/tampildatatm">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Data Training</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="<?= base_url() ?>prediksi_tim_medis/tampildatatm">
             <i class="fas fa-fw fa-table"></i>
-            <span>Data Prediksi Saya</span></a>
+            <span>Data Hasil Prediksi</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url() ?>prediksi_tim_medis/prediksitm">

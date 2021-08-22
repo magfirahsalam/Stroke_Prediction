@@ -10,11 +10,11 @@ class Data extends CI_Controller
         => $this->session->userdata('email')])->row_array();
 
         $data['data_stroke'] = $this->data_stroke_model->indexdata();
-        $this->load->view('data/header', $data);
+        $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
         $this->load->view('data/index_data', $data);
-        $this->load->view('data/footer');
+        $this->load->view('templates/footer');
     }
     public function tambah_data_stroke()
     {
@@ -23,11 +23,11 @@ class Data extends CI_Controller
         => $this->session->userdata('email')])->row_array();
 
         $data['data_stroke'] = $this->data_stroke_model->SemuaData();
-        $this->load->view('data/header', $data);
+        $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
         $this->load->view('data/tambah_data_stroke', $data);
-        $this->load->view('data/footer');
+        $this->load->view('templates/footer');
     }
     public function proses_tambah_data_stroke()
     {
@@ -56,11 +56,11 @@ class Data extends CI_Controller
         => $this->session->userdata('email')])->row_array();
 
         $data['data_stroke'] = $this->data_stroke_model->ambil_id_data_stroke($id_data_stroke);
-        $this->load->view('data/header', $data);
+        $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
         $this->load->view('data/edit_data_stroke', $data);
-        $this->load->view('data/footer');
+        $this->load->view('templates/footer');
     }
     public function proses_edit_data_stroke()
     {

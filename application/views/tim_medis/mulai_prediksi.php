@@ -77,11 +77,12 @@
                         <select class="form-control" name="suara_napas">
                             <option value="0">Tidak Tercantum</option>
                             <option value="1">Normal</option>
+                            <option value="2">Tidak Normal</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="suhu_badan" class="col-form-label">Suhu Badan:</label>
-                        <input type="suhu_badan" class="form-control" id="suhu_badan" name="suhu_badan" placeholder="Masukkan Suhu Badan" required>
+                        <input type="suhu_badan" class="form-control" id="suhu_badan" name="suhu_badan" placeholder="Ganti Tanda Koma Menjadi T" required>
                     </div>
                     <div class="form-group">
                         <label for="respirasi_permenit" class="col-form-label">Jumlah Napas/menit:</label>
@@ -244,13 +245,14 @@
                         <label for="crt" class="col-form-label">CRT:</label>
                         <select class="form-control" name="crt">
                             <option value="0">Tidak Tercantum</option>
-                            <option value="1">Tidak Berisiko</option>
-                            <option value="2">Risiko Tinggi</option>
+                            <option value="1">
+                                < 2 detik</option>
+                            <option value="2">> 2 detik</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="gcs" class="col-form-label">GCS:</label>
-                        <input type="gcs" class="form-control" id="gcs" name="gcs" placeholder="Masukkan GCS" required>
+                        <input type="gcs" class="form-control" id="gcs" name="gcs" placeholder="Isi 0 Jika Tidak Tercantum" required>
                     </div>
                 </div>
             </div>

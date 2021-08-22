@@ -7,7 +7,7 @@
          <div class="card-header py-3">
              <Modal Export Excel -->
                  <div class="card">
-                     <div class="card-body">
+                     <!-- <div class="card-body">
                          <?php echo form_open_multipart('importdata/upload'); ?>
                          <?php if (!empty($this->session->flashdata('status'))) { ?>
                              <div class="alert alert-info" role="alert">
@@ -23,7 +23,7 @@
                              </div>
                              <button type="submit" id="submit" name="import" class="btn-btn-primary">Import</button>
                              <?php echo form_close(); ?>
-                     </div>
+                     </div> -->
                  </div>
                  <div class="card shadow mb-4">
                      <div class="card-header py-4">
@@ -58,21 +58,128 @@
                                      <tbody>
                                          <?php
                                             $id_data_stroke = 1;
-                                            foreach ($data_stroke as $ds) : ?>
+                                            foreach ($data_stroke as $ds) :
+                                                $pekerjaan = "";
+                                                switch ($ds['tipe_pekerjaan']) {
+                                                    case 0:
+                                                        $pekerjaan = "Pekerja Swasta";
+                                                        break;
+                                                    case 1:
+                                                        $pekerjaan = "Bisnis";
+                                                        break;
+                                                    case 2:
+                                                        $pekerjaan = "Pemerintahan";
+                                                        break;
+                                                    case 3:
+                                                        $pekerjaan = "Pekerja Anak";
+                                                        break;
+                                                }
+                                                $jk = "";
+                                                switch ($ds['jenis_kelamin']) {
+                                                    case 0:
+                                                        $jk = "Laki-Laki";
+                                                        break;
+                                                    case 1:
+                                                        $jk = "Perempuan";
+                                                        break;
+                                                }
+                                                $hp = "";
+                                                switch ($ds['hipertensi']) {
+                                                    case 0:
+                                                        $hp = "Ya";
+                                                        break;
+                                                    case 1:
+                                                        $hp = "Tidak";
+                                                        break;
+                                                }
+                                                $lv = "";
+                                                switch ($ds['liver']) {
+                                                    case 0:
+                                                        $lv = "Ya";
+                                                        break;
+                                                    case 1:
+                                                        $lv = "Tidak";
+                                                        break;
+                                                }
+                                                $sp = "";
+                                                switch ($ds['status_pernikahan']) {
+                                                    case 0:
+                                                        $sp = "Sudah Menikah";
+                                                        break;
+                                                    case 1:
+                                                        $sp = "Belum Menikah";
+                                                        break;
+                                                }
+                                                $tmpt = "";
+                                                switch ($ds['tempat_tinggal']) {
+                                                    case 0:
+                                                        $tmpt = "Perkotaan";
+                                                        break;
+                                                    case 1:
+                                                        $tmpt = "Pedesaan";
+                                                        break;
+                                                }
+                                                $rkg = "";
+                                                switch ($ds['rata_kadar_glukosa']) {
+                                                    case 0:
+                                                        $rkg = "Glukosa < 130";
+                                                        break;
+                                                    case 1:
+                                                        $rkg = "Glukosa antara 130 sampai 200";
+                                                        break;
+                                                    case 2:
+                                                        $rkg = "Glukosa > 200";
+                                                        break;
+                                                }
+                                                $ibb = "";
+                                                switch ($ds['index_berat_badan']) {
+                                                    case 0:
+                                                        $ibb = "Index Berat Badan < 18 ";
+                                                        break;
+                                                    case 1:
+                                                        $ibb = "Index Berat Badan antara 18 sampai 25";
+                                                        break;
+                                                    case 2:
+                                                        $ibb = "Index Berat Badan > 25";
+                                                        break;
+                                                }
+                                                $sp = "";
+                                                switch ($ds['status_perokok']) {
+                                                    case 0:
+                                                        $sp = "Dulu Pernah Merokok";
+                                                        break;
+                                                    case 1:
+                                                        $sp = "Tidak Pernah";
+                                                        break;
+                                                    case 2:
+                                                        $sp = "Perokok";
+                                                        break;
+                                                }
+                                                $kt = "";
+                                                switch ($ds['keterangan']) {
+                                                    case 0:
+                                                        $kt = "Tidak Berpotensi Stroke";
+                                                        break;
+                                                    case 1:
+                                                        $kt = "Berpotensi Stroke";
+                                                        break;
+                                                }
+
+                                            ?>
                                              <tr>
-                                                 <td><?php echo $id_data_stroke++; ?></td>
-                                                 <td><?php echo $ds['id_pasien']; ?></td>
-                                                 <td><?php echo $ds['jenis_kelamin']; ?></td>
+                                                 <td><?= $id_data_stroke++; ?></td>
+                                                 <td><?= $ds['id_pasien']; ?></td>
+                                                 <td><?= $jk ?></td>
                                                  <td><?php echo $ds['usia']; ?></td>
-                                                 <td><?php echo $ds['hipertensi']; ?></td>
-                                                 <td><?php echo $ds['liver']; ?></td>
-                                                 <td><?php echo $ds['status_pernikahan']; ?></td>
-                                                 <td><?php echo $ds['tipe_pekerjaan']; ?></td>
-                                                 <td><?php echo $ds['tempat_tinggal']; ?></td>
-                                                 <td><?php echo $ds['rata_kadar_glukosa']; ?></td>
-                                                 <td><?php echo $ds['index_berat_badan']; ?></td>
-                                                 <td><?php echo $ds['status_perokok']; ?></td>
-                                                 <td><?php echo $ds['keterangan']; ?></td>
+                                                 <td><?= $hp ?></td>
+                                                 <td><?= $lv ?></td>
+                                                 <td><?= $sp ?></td>
+                                                 <td><?= $pekerjaan ?></td>
+                                                 <td><?= $tmpt ?></td>
+                                                 <td><?= $rkg ?></td>
+                                                 <td><?= $ibb ?></td>
+                                                 <td><?= $sp ?></td>
+                                                 <td><?= $kt ?></td>
                                                  <td>
                                                      <button type="button" class="badge badge-secondary" data-toggle="modal" data-target="#editmodal<?php echo $ds['id_data_stroke']; ?>">
                                                          Edit
@@ -81,8 +188,8 @@
 
                                                  </td>
                                              </tr>
+                                         <?php endforeach; ?>
                                      </tbody>
-                                 <?php endforeach; ?>
                                  </table>
                              </div>
                          </div>
@@ -181,8 +288,8 @@
                                  <div class="form-group">
                                      <label for="Keterangan" class="col-form-label">Keterangan:</label>
                                      <select class="form-control" name="keterangan">
-                                         <option value="1">Stroke</option>
-                                         <option value="0">Tidak Stroke</option>
+                                         <option value="1">Berpotensi Stroke</option>
+                                         <option value="0">Tidak Berpotensi Stroke</option>
                                      </select>
                                  </div>
                                  <div class="modal-footer">

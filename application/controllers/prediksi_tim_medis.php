@@ -10,11 +10,11 @@ class Prediksi_tim_medis extends CI_Controller
         => $this->session->userdata('email')])->row_array();
 
         $data['prediksi_tim_medis'] = $this->prediksi_tim_medis_model->indexdata();
-        $this->load->view('data/header', $data);
+        $this->load->view('tim_medis/header', $data);
         $this->load->view('tim_medis/sidebar', $data);
         $this->load->view('tim_medis/topbar', $data);
         $this->load->view('tim_medis/prediksi_tim_medis', $data);
-        $this->load->view('data/footer');
+        $this->load->view('templates/footer');
     }
     public function prediksitm()
     {
@@ -23,11 +23,11 @@ class Prediksi_tim_medis extends CI_Controller
         => $this->session->userdata('email')])->row_array();
 
         // // $data['prediksi_tim_medis'] = $this->prediksi_pengunjung_model->tambah_prediksi_tm();
-        $this->load->view('data/header', $data);
+        $this->load->view('tim_medis/header', $data);
         $this->load->view('tim_medis/sidebar', $data);
         $this->load->view('tim_medis/topbar', $data);
         $this->load->view('tim_medis/mulai_prediksi', $data);
-        $this->load->view('data/footer');
+        $this->load->view('tim_medis/footer');
     }
     public function tambah_data_prediksitm()
     {

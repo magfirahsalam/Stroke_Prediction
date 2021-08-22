@@ -40,15 +40,35 @@
                                          <td>Id Pasien</td>
                                          <td>Jenis Kelamin</td>
                                          <td>Usia</td>
-                                         <td>Tekanan Darah Tinggi</td>
-                                         <td>Riwayat Liver</td>
-                                         <td>Status Menikah</td>
-                                         <td>Tipe Pekerjaan</td>
-                                         <td>Tempat Tinggal</td>
-                                         <td>Kadar Glukosa</td>
-                                         <td>Index Berat Badan</td>
-                                         <td>Status Merokok</td>
-                                         <td>Hasil Prediksi</td>
+                                         <td>Keadaan Umum</td>
+                                         <td>Kesadaran</td>
+                                         <td>Tensi Darah</td>
+                                         <td>Nadi Permenit</td>
+                                         <td>Suara Napas</td>
+                                         <td>Suhu Badan</td>
+                                         <td>Respirasi Permenit</td>
+                                         <td>SPO2</td>
+                                         <td>Perubahan Sensorik</td>
+                                         <td>Perubahan Motorik</td>
+                                         <td>Irama Napas</td>
+                                         <td>Bunyi Napas</td>
+                                         <td>Henti Jantung</td>
+                                         <td>Nadi Teraba</td>
+                                         <td>Kulit</td>
+                                         <td>Akral</td>
+                                         <td>Pendarahan</td>
+                                         <td>Turgor</td>
+                                         <td>Sianosis</td>
+                                         <td>Riwayat Alergi</td>
+                                         <td>Medikasi</td>
+                                         <td>Riwayat Stroke</td>
+                                         <td>Refleks Cahaya</td>
+                                         <td>Skala Nyeri</td>
+                                         <td>Aktivitas Mobilisasi</td>
+                                         <td>Risiko Jatuh</td>
+                                         <td>CRT</td>
+                                         <td>GCS</td>
+                                         <td>Hasil Diagnosa</td>
                                          <td>Dibuat Pada</td>
                                          <td>Aksi</td>
                                      </tr>
@@ -56,31 +76,364 @@
                                  <tbody>
                                      <?php
                                         $id_prediksi_tim_medis = 1;
-                                        foreach ($prediksi_tim_medis as $pdktm) : ?>
+                                        foreach ($prediksi_tim_medis as $pdktm) :
+                                            $jktm = "";
+                                            switch ($pdktm['jenis_kelamin_tm']) {
+                                                case 0:
+                                                    $jktm = "Perempuan";
+                                                    break;
+                                                case 1:
+                                                    $jktm = "Laki-laki";
+                                                    break;
+                                            }
+                                            $kutm = "";
+                                            switch ($pdktm['keadaan_umum_tm']) {
+                                                case 0:
+                                                    $kutm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $kutm = "Sedang";
+                                                    break;
+                                                case 2:
+                                                    $kutm = "Tidak Sadar";
+                                                    break;
+                                                case 3:
+                                                    $kutm = "Lemah";
+                                                    break;
+                                            }
+                                            $sntm = "";
+                                            switch ($pdktm['suara_napas_tm']) {
+                                                case 0:
+                                                    $sntm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $sntm = "Normal";
+                                                    break;
+                                                case 2:
+                                                    $sntm = "Tidak Normal";
+                                                    break;
+                                            }
+                                            $kstm = "";
+                                            switch ($pdktm['kesadaran_tm']) {
+                                                case 0:
+                                                    $kstm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $kstm = "Samno-Len";
+                                                    break;
+                                                case 2:
+                                                    $kstm = "Sofor";
+                                                    break;
+                                                case 3:
+                                                    $kstm = "CM";
+                                                    break;
+                                                case 4:
+                                                    $kstm = "Apatis";
+                                                    break;
+                                                case 5:
+                                                    $kstm = "Coma";
+                                                    break;
+                                            }
+                                            $pstm = "";
+                                            switch ($pdktm['perubahan_sensorik_tm']) {
+                                                case 0:
+                                                    $pstm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $pstm = "Tidak Berubah";
+                                                    break;
+                                                case 2:
+                                                    $pstm = "Berubah";
+                                                    break;
+                                            }
+                                            $pmtm = "";
+                                            switch ($pdktm['perubahan_motorik_tm']) {
+                                                case 0:
+                                                    $pmtm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $pmtm = "Tidak Berubah";
+                                                    break;
+                                                case 2:
+                                                    $pmtm = "Berubah";
+                                                    break;
+                                            }
+                                            $intm = "";
+                                            switch ($pdktm['irama_napas_tm']) {
+                                                case 0:
+                                                    $intm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $intm = "Tidak Teratur";
+                                                    break;
+                                                case 2:
+                                                    $intm = "Teratur";
+                                                    break;
+                                            }
+                                            $bntm = "";
+                                            switch ($pdktm['bunyi_napas_tm']) {
+                                                case 0:
+                                                    $bntm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $bntm = "Vasikuler";
+                                                    break;
+                                                case 2:
+                                                    $intm = "Stridor";
+                                                    break;
+                                                case 3:
+                                                    $bntm = "Wheezing";
+                                                    break;
+                                                case 4:
+                                                    $bntm = "Rondi";
+                                                    break;
+                                            }
+                                            $hjtm = "";
+                                            switch ($pdktm['henti_jantung_tm']) {
+                                                case 0:
+                                                    $hjtm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $hjtm = "Tidak";
+                                                    break;
+                                                case 2:
+                                                    $hjtm = "Ya";
+                                                    break;
+                                            }
+                                            $nttm = "";
+                                            switch ($pdktm['nadi_teraba_tm']) {
+                                                case 0:
+                                                    $nttm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $nttm = "Tidak";
+                                                    break;
+                                                case 2:
+                                                    $nttm = "Ya";
+                                                    break;
+                                            }
+                                            $ktm = "";
+                                            switch ($pdktm['kulit_tm']) {
+                                                case 0:
+                                                    $ktm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $ktm = "Lembab";
+                                                    break;
+                                                case 2:
+                                                    $ktm = "Kering";
+                                                    break;
+                                            }
+                                            $atm = "";
+                                            switch ($pdktm['akral_tm']) {
+                                                case 0:
+                                                    $atm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $atm = "Dingin";
+                                                    break;
+                                                case 2:
+                                                    $atm = "Hangat";
+                                                    break;
+                                            }
+                                            $ptm = "";
+                                            switch ($pdktm['pendarahan_tm']) {
+                                                case 0:
+                                                    $ptm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $ptm = "Tidak";
+                                                    break;
+                                                case 2:
+                                                    $ptm = "Ya";
+                                                    break;
+                                            }
+                                            $ttm = "";
+                                            switch ($pdktm['turgor_tm']) {
+                                                case 0:
+                                                    $ttm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $ttm = "Tidak Normal";
+                                                    break;
+                                                case 2:
+                                                    $ttm = "Normal";
+                                                    break;
+                                            }
+                                            $stm = "";
+                                            switch ($pdktm['sianosis_tm']) {
+                                                case 0:
+                                                    $stm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $stm = "Tidak";
+                                                    break;
+                                                case 2:
+                                                    $stm = "Ya";
+                                                    break;
+                                            }
+                                            $ratm = "";
+                                            switch ($pdktm['riwayat_alergi_tm']) {
+                                                case 0:
+                                                    $ratm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $ratm = "Tidak Ada";
+                                                    break;
+                                                case 2:
+                                                    $ratm = "Ada";
+                                                    break;
+                                            }
+                                            $mtm = "";
+                                            switch ($pdktm['medikasi_tm']) {
+                                                case 0:
+                                                    $mtm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $mtm = "Tidak Ada";
+                                                    break;
+                                                case 2:
+                                                    $mtm = "Ada";
+                                                    break;
+                                            }
+                                            $pstm = "";
+                                            switch ($pdktm['pernah_stroke_tm']) {
+                                                case 0:
+                                                    $pstm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $pstm = "Tidak Ada";
+                                                    break;
+                                                case 2:
+                                                    $pstm = "Ada";
+                                                    break;
+                                            }
+                                            $rctm = "";
+                                            switch ($pdktm['refleks_cahaya_tm']) {
+                                                case 0:
+                                                    $rctm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $rctm = "Tidak Ada";
+                                                    break;
+                                                case 2:
+                                                    $rctm = "Ada";
+                                                    break;
+                                            }
+                                            $snytm = "";
+                                            switch ($pdktm['skala_nyeri_tm']) {
+                                                case 0:
+                                                    $snytm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $snytm = "Berat";
+                                                    break;
+                                                case 2:
+                                                    $snytm = "Sedang";
+                                                    break;
+                                                case 3:
+                                                    $snytm = "Ringan";
+                                                    break;
+                                            }
+                                            $amtm = "";
+                                            switch ($pdktm['aktivitas_mobilisasi_tm']) {
+                                                case 0:
+                                                    $amtm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $amtm = "Mandiri";
+                                                    break;
+                                                case 2:
+                                                    $amtm = "Perlu Bantuan";
+                                                    break;
+                                            }
+                                            $rjtm = "";
+                                            switch ($pdktm['risiko_jatuh_tm']) {
+                                                case 0:
+                                                    $rjtm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $rjtm = "Tidak Berisiko";
+                                                    break;
+                                                case 2:
+                                                    $rjtm = "Berisiko";
+                                                    break;
+                                            }
+                                            $crttm = "";
+                                            switch ($pdktm['crt_tm']) {
+                                                case 0:
+                                                    $crttm = "Tidak Tercantum";
+                                                    break;
+                                                case 1:
+                                                    $crttm = "<2 detik";
+                                                    break;
+                                                case 2:
+                                                    $crttm = ">2 detik";
+                                                    break;
+                                            }
+                                            $dtm = "";
+                                            switch ($pdktm['crt_tm']) {
+                                                case 0:
+                                                    $dtm = "Stroke Haemoragic";
+                                                    break;
+                                                case 1:
+                                                    $dtm = "Stroke Non-Haemoragic";
+                                                    break;
+                                                case 2:
+                                                    $dtm = "Stroke Iskemik";
+                                                    break;
+                                                case 3:
+                                                    $dtm = "Stroke Sequelae";
+                                                    break;
+                                                case 4:
+                                                    $dtm = "Stroke";
+                                                    break;
+                                            }
+                                        ?>
                                          <tr>
                                              <td><?php echo $id_prediksi_tim_medis++; ?></td>
                                              <td><?php echo $pdktm['id_pasien_tm']; ?></td>
-                                             <td><?php echo $pdktm['jenis_kelamin_tm']; ?></td>
+                                             <td><?= $jktm ?></td>
                                              <td><?php echo $pdktm['usia_tm']; ?></td>
-                                             <td><?php echo $pdktm['hipertensi_tm']; ?></td>
-                                             <td><?php echo $pdktm['liver_tm']; ?></td>
-                                             <td><?php echo $pdktm['status_pernikahan_tm']; ?></td>
-                                             <td><?php echo $pdktm['tipe_pekerjaan_tm']; ?></td>
-                                             <td><?php echo $pdktm['tempat_tinggal_tm']; ?></td>
-                                             <td><?php echo $pdktm['rata_kadar_glukosa_tm']; ?></td>
-                                             <td><?php echo $pdktm['index_bb_tm']; ?></td>
-                                             <td><?php echo $pdktm['status_perokok_tm']; ?></td>
-                                             <td><?php echo $pdktm['keterangan_tm']; ?></td>
+                                             <td><?= $kutm ?></td>
+                                             <td><?= $kstm ?></td>
+                                             <td><?php echo $pdktm['tensi_darah_tm']; ?></td>
+                                             <td><?php echo $pdktm['nadi_permenit_tm']; ?></td>
+                                             <td><?= $sntm ?></td>
+                                             <td><?php echo $pdktm['suhu_badan_tm']; ?></td>
+                                             <td><?php echo $pdktm['respirasi_permenit_tm']; ?></td>
+                                             <td><?php echo $pdktm['spo2_tm']; ?></td>
+                                             <td><?= $pstm ?></td>
+                                             <td><?= $pmtm ?></td>
+                                             <td><?= $intm ?></td>
+                                             <td><?= $bntm ?></td>
+                                             <td><?= $hjtm ?></td>
+                                             <td><?= $nttm ?></td>
+                                             <td><?= $ktm ?></td>
+                                             <td><?= $atm ?></td>
+                                             <td><?= $ptm ?></td>
+                                             <td><?= $ttm ?></td>
+                                             <td><?= $stm ?></td>
+                                             <td><?= $ratm ?></td>
+                                             <td><?= $mtm ?></td>
+                                             <td><?= $pstm ?></td>
+                                             <td><?= $rctm ?></td>
+                                             <td><?= $snytm ?></td>
+                                             <td><?= $amtm ?></td>
+                                             <td><?= $rjtm ?></td>
+                                             <td><?= $crttm ?></td>
+                                             <td><?php echo $pdktm['gcs_tm']; ?></td>
+                                             <td><?= $dtm ?></td>
                                              <td><?php echo $pdktm['dibuat_pada']; ?></td>
                                              <td>
                                                  <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#editmodal<?php echo $pdktm['id_prediksi_tim_medis']; ?>">
                                                      Edit
                                                  </button>
                                                  <a href="<?= base_url() ?>prediksi_tim_medis/hapus_data_prediksitm/<?php echo $pdktm['id_prediksi_tim_medis']; ?>" class="badge badge-danger">Hapus</a>
-                                             <td>
-                                         <tr>
+                                             </td>
+                                         </tr>
+                                     <?php endforeach; ?>
                                  <tbody>
-                                 <?php endforeach; ?>
                              </table>
                          </div>
                      </div>

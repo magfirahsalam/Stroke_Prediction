@@ -37,7 +37,7 @@
 
     <!-- Nav Item -->
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url() ?>data_training_tim_medis/tampildatatm">
+        <a class="nav-link" href="<?= base_url() ?>data_training_tim_medis/index">
             <i class="fas fa-fw fa-table"></i>
             <span>Data Training</span></a>
     </li>

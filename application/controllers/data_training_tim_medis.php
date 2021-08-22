@@ -9,25 +9,25 @@ class Data_training_tim_medis extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email'
         => $this->session->userdata('email')])->row_array();
 
-        $data['data_stroke_tim_medis'] = $this->data_training_tim_medis_model->SemuaData();
-        $this->load->view('data/header', $data);
+        $data['data_stroke_tim_medis'] = $this->data_stroke_tim_medis_model->indexdata();
+        $this->load->view('templates/header', $data);
         $this->load->view('tim_medis/sidebar', $data);
         $this->load->view('tim_medis/topbar', $data);
         $this->load->view('tim_medis/data_training_tim_medis', $data);
-        $this->load->view('data/footer');
+        $this->load->view('templates/footer');
     }
-    public function tambah_data_stroke()
+    public function tambah_data_stroke_tim_medis()
     {
         $data['title'] = 'Tambah Data';
         $data['user'] = $this->db->get_where('user', ['email'
         => $this->session->userdata('email')])->row_array();
 
-        $data['data_stroke'] = $this->data_stroke_model->SemuaData();
-        $this->load->view('data/header', $data);
-        $this->load->view('templates/sidebar', $data);
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('data/tambah_data_stroke', $data);
-        $this->load->view('data/footer');
+        $data['data_stroke_tim_medis'] = $this->data_stroke_tim_medis_model->SemuaData();
+        $this->load->view('tim_medis/header', $data);
+        $this->load->view('tim_medis/sidebar', $data);
+        $this->load->view('tim_medis/topbar', $data);
+        $this->load->view('tim_medis/data_training_tim_medis', $data);
+        $this->load->view('tim_medis/footer');
     }
     public function proses_tambah_data_stroke()
     {

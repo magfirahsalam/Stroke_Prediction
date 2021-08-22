@@ -34,6 +34,11 @@
 
 <!-- Page level plugins -->
 <script src="<?= base_url(); ?>vendor/sbadmin2/vendor/chart.js/Chart.min.js"></script>
+<script src="<?= base_url(); ?>vendor/sbadmin2/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="<?= base_url(); ?>vendor/sbadmin2/js/demo/datatables-demo.js"></script>
+<script src="<?= base_url(); ?>vendor/sbadmin2/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url(); ?>vendor/sbadmin2/vendor/datatables/jquery.dataTables.js"></script>
+<script src="<?= base_url(); ?>vendor/sbadmin2/vendor/datatables/dataTables.bootstrap4.js"></script>
 
 <!-- Page level custom scripts -->
 <script src="<?= base_url(); ?>vendor/sbadmin2/js/demo/chart-area-demo.js"></script>
@@ -176,9 +181,13 @@
     var myPieChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ["Stroke Haemoragic", "Stroke Non-Haemoragic"],
+            labels: ["Stroke Haemoragic", "Stroke Non-Haemoragic", "Stroke Iskemik", "Stroke Sequelae", "Stroke"],
             datasets: [{
-                data: [<?php echo $this->db->query("select diagnosa_tm from prediksi_tim_medis where diagnosa_tm='1'")->num_rows(); ?>, <?php echo $this->db->query("select diagnosa_tm from prediksi_tim_medis where diagnosa_tm='0'")->num_rows(); ?>],
+                data: [<?php echo $this->db->query("select diagnosa_tm from prediksi_tim_medis where diagnosa_tm='0'")->num_rows(); ?>,
+                    <?php echo $this->db->query("select diagnosa_tm from prediksi_tim_medis where diagnosa_tm='1'")->num_rows(); ?>,
+                    // </?php echo $this->db->query("select diagnosa_tm from prediksi_tim_medis where diagnosa_tm='2'")->num_rows(); ?>,
+                    // </?php echo $this->db->query("select diagnosa_tm from prediksi_tim_medis where diagnosa_tm='3'")->num_rows(); ?>
+                ],
                 backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
                 hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
                 hoverBorderColor: "rgba(234, 236, 244, 1)",

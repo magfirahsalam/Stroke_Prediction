@@ -38,10 +38,16 @@
                         </div>
                         <div class="mt-4 text-center small">
                             <span class="mr-2">
-                                <i class="fas fa-circle text-primary"></i>Stroke Non Haemoragic
+                                <i class="fas fa-circle text-secondary"></i>Stroke Haemoragic
                             </span>
                             <span class="mr-2">
-                                <i class="fas fa-circle text-success"></i>Stroke Haemoragic
+                                <i class="fas fa-circle text-success"></i>Stroke Non-Haemoragic
+                            </span>
+                            <span class="mr-2">
+                                <i class="fas fa-circle text-warning"></i>Stroke Iskemik
+                            </span>
+                            <span class="mr-2">
+                                <i class="fas fa-circle text-info"></i>Stroke Sequelae
                             </span>
                         </div>
                     </div>

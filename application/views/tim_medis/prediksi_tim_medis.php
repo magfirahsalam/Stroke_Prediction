@@ -426,9 +426,9 @@
                                              <td><?= $dtm ?></td>
                                              <td><?php echo $pdktm['dibuat_pada']; ?></td>
                                              <td>
-                                                 <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#editmodal<?php echo $pdktm['id_prediksi_tim_medis']; ?>">
+                                                 <!-- <button type="button" class="badge badge-primary" data-toggle="modal" data-target="#editmodal<?php echo $pdktm['id_prediksi_tim_medis']; ?>">
                                                      Edit
-                                                 </button>
+                                                 </button> -->
                                                  <a href="<?= base_url() ?>prediksi_tim_medis/hapus_data_prediksitm/<?php echo $pdktm['id_prediksi_tim_medis']; ?>" class="badge badge-danger">Hapus</a>
                                              </td>
                                          </tr>

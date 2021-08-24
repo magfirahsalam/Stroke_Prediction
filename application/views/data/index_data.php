@@ -399,8 +399,8 @@
                                      <div class="form-group">
                                          <label for="Keterangan" class="col-form-label">Keterangan:</label>
                                          <select class="form-control" name="keterangan">
-                                             <option value="1" <?= $ds['keterangan'] == 1 ? "selected" : "" ?>>Stroke</option>
-                                             <option value="0" <?= $ds['keterangan'] == 0 ? "selected" : "" ?>>Tidak Stroke</option>
+                                             <option value="1" <?= $ds['keterangan'] == 1 ? "selected" : "" ?>>Berpotensi Stroke</option>
+                                             <option value="0" <?= $ds['keterangan'] == 0 ? "selected" : "" ?>>Tidak Berpotensi Stroke</option>
                                          </select>
                                      </div>
                                      <div class="modal-footer">

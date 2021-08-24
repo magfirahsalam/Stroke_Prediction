@@ -32,15 +32,19 @@
     <hr class="sidebar-divider d-none d-md-block">
     <!-- Heading -->
     <div class="sidebar-heading">
-        Prediksi
+        Data
     </div>
-
-    <!-- Nav Item -->
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url() ?>data_training_tim_medis/index">
             <i class="fas fa-fw fa-table"></i>
             <span>Data Training</span></a>
     </li>
+    <hr class="sidebar-divider d-none d-md-block">
+    <div class="sidebar-heading">
+        Prediksi
+    </div>
+
+    <!-- Nav Item -->
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url() ?>prediksi_tim_medis/tampildatatm">
             <i class="fas fa-fw fa-table"></i>

@@ -82,7 +82,7 @@
                     </div>
                     <div class="form-group">
                         <label for="suhu_badan" class="col-form-label">Suhu Badan:</label>
-                        <input type="suhu_badan" class="form-control" id="suhu_badan" name="suhu_badan" placeholder="Ganti Tanda Koma Menjadi T" required>
+                        <input type="suhu_badan" class="form-control" id="suhu_badan" name="suhu_badan" placeholder="Ganti Tanda Koma Menjadi Titik" required>
                     </div>
                     <div class="form-group">
                         <label for="respirasi_permenit" class="col-form-label">Jumlah Napas/menit:</label>
@@ -252,7 +252,7 @@
                     </div>
                     <div class="form-group">
                         <label for="gcs" class="col-form-label">GCS:</label>
-                        <input type="gcs" class="form-control" id="gcs" name="gcs" placeholder="Isi 0 Jika Tidak Tercantum" required>
+                        <input type="gcs" class="form-control" id="gcs" name="gcs" placeholder="Isi Angka 1-20. Isi 0 Jika Tidak Tercantum" required>
                     </div>
                 </div>
             </div>

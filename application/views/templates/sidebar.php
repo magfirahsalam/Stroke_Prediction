@@ -49,6 +49,11 @@
 
     <!-- Nav Item -->
     <li class="nav-item">
+        <a class="nav-link" href="<?= base_url() ?>data_tim_medis/index">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Data Tim Medis</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="<?= base_url() ?>data/index">
             <i class="fas fa-fw fa-table"></i>
             <span>Data Training</span></a>

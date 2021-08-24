@@ -10,11 +10,11 @@ class Data_tim_medis extends CI_Controller
         => $this->session->userdata('email')])->row_array();
 
         $data['data_tim_medis'] = $this->data_tim_medis_model->SemuaData();
-        $this->load->view('data/header', $data);
+        $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
         $this->load->view('data/data_tim_medis', $data);
-        $this->load->view('data/footer');
+        $this->load->view('templates/footer');
     }
     public function tambah_data_tim_medis()
     {

@@ -56,6 +56,7 @@ class Prediksi_tim_medis_model extends CI_Model
             "diagnosa" => $this->input->post('diagnosa')
         ];
         $this->db->insert('prediksi_tim_medis', $data);
+        $this->db->insert('data_stroke_tim_medis', $data);
     }
     public function indexdata()
     {
@@ -94,5 +95,6 @@ class Prediksi_tim_medis_model extends CI_Model
     public function tambah_prediksi_tm($prediksi_tim_medis)
     {
         return $this->db->insert('prediksi_tim_medis', $prediksi_tim_medis);
+        return $this->db->insert('data_stroke_tim_medis', $prediksi_tim_medis);
     }
 }

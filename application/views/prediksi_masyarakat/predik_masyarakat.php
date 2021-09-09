@@ -123,11 +123,11 @@
                         </div>
                         <div class="form-group">
                             <label for="Usia" class="col-form-label">Usia:</label>
-                            <input type="usia" class="form-control" id="usia" name="usia" placeholder="Masukkan Usia Anda" required>
+                            <input type="number" min="1" class="form-control" id="usia" name="usia" placeholder="Masukkan Usia Anda" required>
                         </div>
                         <div class="form-group">
                             <label for="tinggi_badan" class="col-form-label">Tinggi Badan:</label>
-                            <input onchange="hitungbmi()" type="tinggi_badan" class="form-control" id="tinggi_badan" name="tinggi_badan" placeholder="Masukkan Tinggi Badan Anda" required>
+                            <input onchange="hitungbmi()" type="number" min="1" class="form-control" id="tinggi_badan" name="tinggi_badan" placeholder="Masukkan Tinggi Badan Anda" required>
                         </div>
                         <div class="form-group">
                             <label for="berat_badan" class="col-form-label">Berat Badan:</label>

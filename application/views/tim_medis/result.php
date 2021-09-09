@@ -452,7 +452,7 @@
                     echo "CRT : > 2 Detik";
                 }
                 ?><br>
-                <?php echo "gcs_tm : " . $temp['gcs_tm']; ?><br>
+                <?php echo "GCS : " . $temp['gcs_tm']; ?><br>
                 <!-- <p class="card-text">ID Pasien : </?= $ptm['id_pasien_tm']; ?></p> -->
                 <h5>Diagnosa : Stroke Non-Haemoragic</h5>
                 <hr class="my-1">
